@@ -1,0 +1,169 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardUseCompatPadding="true">
+
+    <LinearLayout
+        android:id="@+id/surface_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/parent_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/printBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:scaleType="fitXY"
+                android:src="@mipmap/printer_1" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:layout_marginTop="65dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp">
+
+                <!-- Row for StockTransfer ID -->
+                <TextView
+                    style="@style/header_h1_text_title_list_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="StockTransfer ID " />
+
+                <TextView
+                    style="@style/header_h1_text_title_list_item"
+                    android:id="@+id/stCode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!-- Row for Date and Time Stamp -->
+                <TextView
+                    style="@style/header_h1_text_title_list_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Date and Time Stamp " />
+
+                <TextView
+                    style="@style/header_h1_text_title_list_item"
+                    android:id="@+id/tv_dateandtimestamp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!-- Row for From CC -->
+                <TextView
+                    style="@style/header_h1_text_title_list_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="From CC " />
+
+                <TextView
+                    style="@style/header_h1_text_title_list_item"
+                    android:id="@+id/fromCCTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!-- Row for To CC -->
+                <TextView
+                    style="@style/header_h1_text_title_list_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="To CC " />
+
+                <TextView
+                    style="@style/header_h1_text_title_list_item"
+                    android:id="@+id/tcCCTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!-- Row for Fruit Type -->
+                <TextView
+                    style="@style/header_h1_text_title_list_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fruit Type " />
+
+                <TextView
+                    style="@style/header_h1_text_title_list_item"
+                    android:id="@+id/tvFruit_Type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!-- Row for Net Weight -->
+                <TextView
+                    style="@style/header_h1_text_title_list_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Net Weight " />
+
+                <TextView
+                    style="@style/header_h1_text_title_list_item"
+                    android:id="@+id/netWeightTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!-- Row for Vehicle Number -->
+                <TextView
+                    style="@style/header_h1_text_title_list_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Vehicle Number " />
+
+                <TextView
+                    style="@style/header_h1_text_title_list_item"
+                    android:id="@+id/vehicleNumberTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!-- Row for StockTransfer Created By -->
+                <TextView
+                    style="@style/header_h1_text_title_list_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="StockTransfer Created By " />
+
+                <TextView
+                    style="@style/header_h1_text_title_list_item"
+                    android:id="@+id/tvcreatedby"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <!-- Row for FromCC Agent Name -->
+                <TextView
+                    style="@style/header_h1_text_title_list_item"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="From CC Agent Name " />
+
+                <TextView
+                    style="@style/header_h1_text_title_list_item"
+                    android:id="@+id/tvccagentname"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </GridLayout>
+
+            <ImageView
+                android:id="@+id/arrow_right"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:layout_margin="1dp"
+                android:visibility="gone"
+                android:src="@mipmap/arrow_point_to_right" />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</android.support.v7.widget.CardView>
