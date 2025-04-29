@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/printImg"
                     android:gravity="center"
-                    android:text="3F Oil Palm Agrotech PVT LTD"
+                    android:text="Palm360"
                     android:textAllCaps="true" />
 
                 <TextView
@@ -59,7 +59,7 @@
                     android:background="@drawable/light_bg_print"
                     android:gravity="center"
                     android:padding="10dp"
-                    android:text="Oil Palm f.f.b receipt"
+                    android:text="Palm 360o f.f.b receipt"
                     android:textAllCaps="true"
                     android:textSize="15dp" />
             </RelativeLayout>

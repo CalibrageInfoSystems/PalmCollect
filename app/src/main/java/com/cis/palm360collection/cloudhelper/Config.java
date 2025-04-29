@@ -11,11 +11,11 @@ public class Config {
 //    public static final String url = "http://192.168.1.145/local3fservice/api/SyncTransactions/SyncTransactions";
 
     public static final String login_url = "/Login";
-
+  public static String live_url = "http://182.18.157.215/Palm360/API/api"; //Local test
 
    // public static  String live_url = "http://182.18.139.166/3FOilPalm/API/api";
 
-public static String live_url = "http://182.18.157.215/3FSmartPalm_Nursery/API/api";//new Test
+//public static String live_url = "http://182.18.157.215/3FSmartPalm_Nursery/API/api";//new Test
 
     //public static String live_url = "http://182.18.157.215/3FOilPalmNurseryTest/API/api"; //UAT
 
@@ -25,7 +25,7 @@ public static String live_url = "http://182.18.157.215/3FSmartPalm_Nursery/API/a
 
         if (BuildConfig.BUILD_TYPE.equalsIgnoreCase("release")) {
 
-         live_url = "http://182.18.157.215/3FSmartPalm_Nursery/API/api"; //new Test
+         live_url = "http://182.18.157.215/Palm360/API/api"; //new Test
             // live_url = "http://182.18.157.215/3FSmartPalmNursery_UAT/API/api"; //Current UAT 19th nov changed
 
         //   live_url = "http://182.18.139.166/3FOilPalm/API/api" ;
@@ -36,7 +36,7 @@ public static String live_url = "http://182.18.157.215/3FSmartPalm_Nursery/API/a
         } else {
 
       //      live_url = "http://182.18.139.166/3FOilPalm/API/api" ;
-      live_url = "http://182.18.157.215/3FSmartPalm_Nursery/API/api"; //new Test
+      live_url = "http://182.18.157.215/Palm360/API/api"; //new Test
             //live_url = "http://182.18.157.215/3FSmartPalmNursery_UAT/API/api"; //Current UAT 19th nov changed
             // live_url = "http://182.18.157.215/3FOilPalmNurseryTest/API/api"; //UAT
         //    live_url = "http://13.234.87.130/3FOilpalm/API/api";

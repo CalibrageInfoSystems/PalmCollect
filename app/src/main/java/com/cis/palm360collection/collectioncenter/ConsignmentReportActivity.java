@@ -59,7 +59,7 @@ public class ConsignmentReportActivity extends OilPalmBaseActivity implements on
     private String fromDateStr = "";
     private String toDateStr = "";
     private ConsignmentReportModel selectedReport;
-    private String title = " 3F OILPALM PVT LTD ";
+    private String title = " Palm 360 ";
     private String subTitle = "   Consignment Dispatch Receipt";
     private BluetoothOperation bluetoothOperation;
     private CCDataAccessHandler ccDataAccessHandler;
@@ -370,7 +370,7 @@ public class ConsignmentReportActivity extends OilPalmBaseActivity implements on
         sb.append("\n");
         sb.append(" ");
         sb.append("\n");
-        sb.append(" Farmer signature");
+        sb.append(" Grower signature");
         sb.append(" ");
         sb.append("\n");
         sb.append(" ");

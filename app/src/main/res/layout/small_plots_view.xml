@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:singleLine="true"
-                android:text="Plot Village"
+                android:text="Field Village"
                 android:layout_marginTop="10dp"
                 android:textSize="16dp"/>
 
@@ -50,7 +50,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:singleLine="true"
-                android:text="Plot LandMark"
+                android:text="Field LandMark"
                 android:layout_marginTop="10dp"
                 android:textSize="16dp"/>
 
@@ -61,7 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:singleLine="true"
-                android:text="Plot Area"
+                android:text="Field Area"
                 android:layout_marginTop="10dp"
                 android:textSize="16dp"/>
 
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:singleLine="true"
-                android:text="Plot survey number"
+                android:text="Field survey number"
                 android:layout_marginTop="10dp"
                 android:textSize="16dp"/>
 

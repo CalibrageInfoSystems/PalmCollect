@@ -417,7 +417,7 @@ public class PreViewConsignmentScreen extends BaseFragment implements BluetoothD
         mPrinter.setPrinter(PrinterConstants.Command.ALIGN, PrinterConstants.Command.ALIGN_CENTER);
         mPrinter.setCharacterMultiple(0, 1);
         mPrinter.setLeftMargin(0, 0);
-        mPrinter.printText(" 3F OILPALM PVT LTD " + "\n");
+        mPrinter.printText(" Palm360" + "\n");
         mPrinter.setPrinter(PrinterConstants.Command.ALIGN, PrinterConstants.Command.ALIGN_CENTER);
         mPrinter.setCharacterMultiple(0, 1);
         mPrinter.printText("   Consignment Dispatch Receipt" + "\n");
@@ -478,7 +478,7 @@ public class PreViewConsignmentScreen extends BaseFragment implements BluetoothD
         sb.append("\n");
         sb.append(" ");
         sb.append("\n");
-        sb.append(" Farmer signature");
+        sb.append(" Grower signature");
         sb.append(" ");
         sb.append("\n");
         sb.append(" ");

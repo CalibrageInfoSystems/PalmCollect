@@ -43,6 +43,7 @@
 
     <style name="spinner_bg">
         <item name="android:background">@drawable/spinner_bg</item>
+        <item name="android:padding">10dp</item>
     </style>
 
     <style name="spinnerStyle" parent="android:style/Widget.ListView.DropDown">
@@ -77,7 +78,7 @@
         <item name="android:textColor">@color/header_txt</item>
         <item name="android:fontFamily">sans-serif-light</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">25sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:gravity">center</item>
         <item name="android:padding">5dp</item>
         <item name="android:layout_marginTop">40dp</item>
@@ -109,7 +110,7 @@
 
     <style name="textbasic_title">
         <item name="android:textColor">#000000</item>
-        <item name="android:textSize">16sp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">sans-serif-bold</item>
     </style>
@@ -146,7 +147,7 @@
         <item name="android:layout_height">50dp</item>
         <item name="android:ellipsize">end</item>
         <item name="android:singleLine">true</item>
-        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:textColor">@color/colorPrimary</item>
         <item name="android:textSize">25sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:fontFamily">Roboto_Regular</item>
@@ -238,5 +239,18 @@
         <item>Yes</item>
         <item>No</item>
     </string-array>
+    <style name="newmoduleBtnStyle">
+        <item name="android:background">@drawable/newrounded_btn</item>
+        <item name="android:textColor">@color/colorPrimary    </item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:textStyle">normal</item>
 
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:drawableRight">@mipmap/arrow_small_right</item>
+        <item name="android:drawablePadding">25dp</item>
+        <item name="android:paddingLeft">35dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_width">match_parent</item>
+    </style>
 </resources>

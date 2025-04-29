@@ -58,7 +58,7 @@ public class AddFarmersPlotsInfoViewHolder extends CheckableChildViewHolder {
             tvlandmark.setVisibility(View.GONE);
         }
 
-        tvplotarea.setText("Plot size: "+plotdetailsObj.getPlotArea() + " Ha");
+        tvplotarea.setText("Field size: "+plotdetailsObj.getPlotArea() + " Ha");
         tvplotvillage.setText(plotdetailsObj.getVillageName());
         tvplotsurveynumber.setText(plotdetailsObj.getSurveyNumber());
     }

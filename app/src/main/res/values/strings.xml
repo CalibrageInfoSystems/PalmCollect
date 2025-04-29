@@ -1,7 +1,7 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Palm Collect  </string>
-    <string name="farmer_nmae">Farmer Name</string>
-    <string name="farmer_code">Farmer Code</string>
+    <string name="farmer_nmae">Grower Name</string>
+    <string name="farmer_code">Grower Code</string>
     <string name="user_name_comment_tag">User name of comment</string>
     <string name="user_comment_tag">User comment</string>
 
@@ -107,14 +107,14 @@
     <string name="vehicle_typee">Vehicle Type</string>
     <string name="village_code">Village *</string>
     <string name="village_code_marketsur">Village</string>
-    <string name="plot_number">Plot Number *</string>
-    <string name="farmer_first_name">Farmer First Name *</string>
-    <string name="farmercode">Farmer Code *</string>
-    <string name="farmer_middle_name">Farmer Middle Name</string>
-    <string name="farmer_last_name">Farmer Last Name *</string>
+    <string name="plot_number">Field Number *</string>
+    <string name="farmer_first_name">Grower First Name *</string>
+    <string name="farmercode">Grower Code *</string>
+    <string name="farmer_middle_name">Grower Middle Name</string>
+    <string name="farmer_last_name">Grower Last Name *</string>
     <string name="survey_number">Survey Number *</string>
     <string name="adangal_file_no">Adangal / File No</string>
-    <string name="plot_area">Total Plot Area (Ha) *</string>
+    <string name="plot_area">Total Field Area (Ha) *</string>
     <string name="under_palm">Area suitable for oil palm(Ha)</string>
     <string name="area_left_out">Area Left out(Ha)</string>
     <string name="contract_mou">Contract / MOU No *</string>
@@ -122,8 +122,8 @@
     <string name="land_mark">Land Mark *</string>
     <string name="active">Active*</string>
     <string name="gps_boundaries_of_the_plot">GPS Boundaries of the Plot</string>
-    <string name="plot_area_as_per_gps">Plot Area as per GPS</string>
-    <string name="plot_difference">Plot difference</string>
+    <string name="plot_area_as_per_gps">Field Area as per GPS</string>
+    <string name="plot_difference">Field difference</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
@@ -144,10 +144,10 @@
     <string name="healthOfPlantationDetails">Health of Plantation Details</string>
     <string name="complaintDetails">Complaint Details</string>
 
-    <string name="plotCode">Plot Code *</string>
-    <string name="farmerName">Farmer Name </string>
+    <string name="plotCode">Field Code *</string>
+    <string name="farmerName">Grower Name </string>
     <string name="crop">Crop *</string>
-    <string name="neighbourPlot">Neighbour Plot *</string>
+    <string name="neighbourPlot">Neighbour Field *</string>
     <string name="interCropYear">Inter Crop in Year </string>
     <string name="varietyType">Source Of Oil Palm *</string>
     <string name="areaAllocated">Area Allocated</string>
@@ -177,7 +177,7 @@
     <string name="quantity_of_cattle">Quantity of Cattle ?</string>
     <string name="refferal_name">Referral Name</string>
     <string name="error_surveyNumber">Please enter the Survey Number</string>
-    <string name="error_totalplotarea">Please enter the Total Plot Area</string>
+    <string name="error_totalplotarea">Please enter the Total Field Area</string>
     <string name="error_totalplotarea_underpalm">Please enter the area under palm</string>
     <string name="error_mounumber">Please enter the Contract MOU No</string>
     <string name="error_moudate">Please enter the Contract MOU Date</string>
@@ -186,9 +186,9 @@
     <string name="referrals">Referrals</string>
     <string name="referral_name">Referral Name</string>
     <string name="mobile_no">Mobile No</string>
-    <string name="farmer_land_details">Farmer Land Details</string>
+    <string name="farmer_land_details">Grower Land Details</string>
     <string name="market_survey">Market Survey</string>
-    <string name="plot_display">Plot Display</string>
+    <string name="plot_display">Field Display</string>
     <string name="refresh">Refresh Data</string>
 
 
@@ -207,8 +207,8 @@
     <string name="error_other_bank">Please enter other bank name</string>
     <string name="error_sourceofContract">Please Select source of contract</string>
     <string name="error_title">Please Select Title</string>
-    <string name="error_farmer_first_name">Please enter farmer first name</string>
-    <string name="error_farmer_last_name">Please enter farmer last name </string>
+    <string name="error_farmer_first_name">Please enter grower first name</string>
+    <string name="error_farmer_last_name">Please enter grower last name </string>
     <string name="error_husband_name">Please enter husband or father name</string>
     <string name="error_mother_name">Please enter mother name</string>
     <string name="error_age">Please enter age </string>
@@ -223,9 +223,9 @@
     <string name="bore_well">Bore Well</string>
     <string name="state">State</string>
     <string name="district">District</string>
-    <string name="farmer_frist_name_text">Farmer First Name *</string>
-    <string name="farmer_middle_name_text">Farmer Middle Name</string>
-    <string name="farmer_last_name_text">Farmer Last Name *</string>
+    <string name="farmer_frist_name_text">Grower First Name *</string>
+    <string name="farmer_middle_name_text">Grower Middle Name</string>
+    <string name="farmer_last_name_text">Grower Last Name *</string>
     <string name="mother_name_text">Mother Name *</string>
     <string name="father_husband_name_text">Father Name *</string>
     <string name="date_of_birth">Date of Birth</string>
@@ -233,7 +233,7 @@
     <string name="gender_text">Gender *</string>
     <string name="primary_contact_no_text">Primary Contact Number *</string>
     <string name="secondary_contact_number_text">Secondary Contact Number</string>
-    <string name="address1">Door No / H.No./Plot No *</string>
+    <string name="address1">Door No / H.No./Field No *</string>
     <string name="address2">Street No / Area Name *</string>
     <string name="land_mark_text">Land Mark *</string>
     <string name="villagecode_text">VillageCode *</string>
@@ -243,8 +243,8 @@
     <string name="pan_card_number_text">Pan Card Number</string>
     <string name="voter_id_card_number_text">Voter Id Card Number</string>
     <string name="active_text">Active *</string>
-    <string name="farmer_personal_details_header">Farmer Personal Details</string>
-    <string name="bank_account_details">Farmer Bank Account Details</string>
+    <string name="farmer_personal_details_header">Grower Personal Details</string>
+    <string name="bank_account_details">Grower Bank Account Details</string>
     <string name="nextFollowUpDate">Next Follow up Date</string>
     <string name="followUpRequired">Follow up Required</string>
     <string name="resolution">Resolution</string>
@@ -258,13 +258,13 @@
     <string name="id_proofs">ID Proofs</string>
     <string name="bankcode">BankCode *</string>
     <string name="bankname">BankName *</string>
-    <string name="email_address">Farmer Email ID</string>
+    <string name="email_address">Grower Email ID</string>
     <string name="cast">Category*</string>
     <string name="personal_contact_number">Contact Person Name</string>
     <string name="title_activity_splash_screen">SplashScreen</string>
-    <string name="farmer_list">Farmer List</string>
+    <string name="farmer_list">Grower List</string>
     <string name="title_activity_base">BaseActivity</string>
-    <string name="farmer_details">Farmer Details</string>
+    <string name="farmer_details">Grower Details</string>
     <string name="year_of_planting">Year of Planting *</string>
     <string name="crop_before_oil_palm">Crop Before Oil Palm*</string>
     <string name="area_allocated">Area Allocated(Ha)*</string>
@@ -283,7 +283,7 @@
     <string name="palm_hyegiene">Palm hygiene *</string>
     <string name="type_of_plantation_a_b_c">Type of plantation (A,B,C) *</string>
     <string name="gps_boundries">Gps Points</string>
-    <string name="neighbourPlot_insert">Neighbour Plot </string>
+    <string name="neighbourPlot_insert">Neighbour Field </string>
     <string name="interCropYear_insert">Inter Crop in Year </string>
     <string name="finish">FINISH</string>
     <string name="residential_address">Residential Address</string>
@@ -321,15 +321,15 @@
     <string name="area_extension">Area Extension</string>
     <string name="view_prospective_farmers">View Prospective Farmers</string>
     <string name="conversion">Conversion</string>
-    <string name="view_current_farmer_list">View current farmer list</string>
+    <string name="view_current_farmer_list">View current grower list</string>
     <string name="sync">Sync</string>
-    <string name="new_farmer_registration">New Farmer Registration</string>
-    <string name="new_plot_registration">New Plot Registration</string>
+    <string name="new_farmer_registration">New Grower Registration</string>
+    <string name="new_plot_registration">New Field Registration</string>
     <string name="title_activity_registration_flow_screen">RegistrationFlowScreen</string>
     <string name="personal_details">Personal Details</string>
-    <string name="plot_details">Plot Details</string>
+    <string name="plot_details">Field Details</string>
     <string name="water_soil_power_details">Water, Soil, Power details</string>
-    <string name="plot_geo_tag">Plot Geo Tag</string>
+    <string name="plot_geo_tag">Field Geo Tag</string>
     <string name="conversion_potential_and_notes">Conversion Potential and Notes</string>
     <string name="source_of_water">Source of water</string>
     <string name="waternumber">Number *</string>
@@ -341,7 +341,7 @@
     <string name="totalwaterdischarge">Total Water Discharge *</string>
     <string name="totalamountofwaterdischarge">Total Amount of Water Discharge ltr/day *</string>
     <string name="typeofirrigation">Type of irrigation</string>
-    <string name="plotprioritization">Plot Prioritization</string>
+    <string name="plotprioritization">Field Prioritization</string>
     <string name="soiltype">Soil type *</string>
     <string name="poweravailability">Power Availability *</string>
     <string name="typeofpower">Type of Power *</string>
@@ -351,13 +351,13 @@
     <string name="soildetails">Soil Details</string>
     <string name="powerdetails">Power Details</string>
     <string name="mainissuecurrentcrop">Main issues with current crop *</string>
-    <string name="farmerreadytoconvert">Is the farmer ready to convert? *</string>
+    <string name="farmerreadytoconvert">Is the frower ready to convert? *</string>
     <string name="potentialscore">Conversion Potential Score *</string>
     <string name="harverstmonthofcurrentcrop">Harvesting Month of Current Crop *</string>
     <string name="waterdetails">Water Details</string>
     <string name="source_of_contact">Source of Contact *</string>
     <string name="title">Title</string>
-    <string name="farmer_address">Farmer Address</string>
+    <string name="farmer_address">Grower Address</string>
     <string name="annual_income">Annual Income *</string>
     <string name="education_details">Education Details</string>
     <string name="create_geo_tag">Create Geotag</string>
@@ -383,7 +383,7 @@
     <string name="send_stock_transfer">"Send Stock Transfer"</string>
     <string name="receive_consignment">"Receive Consignment"</string>
     <string name="reports">"Reports"</string>
-    <string name="plot_address">Plot Address *</string>
+    <string name="plot_address">Field Address *</string>
     <string name="current_crop_grown">Current Crop Grown</string>
     <string name="area_of_current_crop">Area of Current Crop</string>
     <string name="income_from_current_crops">Income from Current Crops</string>
@@ -410,8 +410,8 @@
     <string name="grader_name">"Name of grader *"</string>
     <string name="title_activity_crop_maintenance_home_screen">CropMaintenanceHomeScreen</string>
     <string name="view_snapshot">View snapshot</string>
-    <string name="update_farmer_details">Update Farmer Details</string>
-    <string name="update_plot_details">Update Plot Details</string>
+    <string name="update_farmer_details">Update Grower Details</string>
+    <string name="update_plot_details">Update Field Details</string>
     <string name="update_water_soil_power_details">Update Water, Soil, Power details</string>
     <string name="plantation_details">Plantation details</string>
     <string name="fertilizer_details_amp_nutrient_deficiencies"><![CDATA[Fertilizer details & Nutrient Deficiencies]]></string>
@@ -421,9 +421,9 @@
     <string name="harvest_details">Harvest details</string>
     <string name="complaints">Complaints</string>
     <string name="title_activity_oil_palm_base">OilPalmBaseActivity</string>
-    <string name="snap_shot">Farmer Snapshot</string>
+    <string name="snap_shot">Grower Snapshot</string>
     <string name="crop_maintenance">Crop maintenance</string>
-    <string name="snap_shot_1">Farmer Snapshot</string>
+    <string name="snap_shot_1">Grower Snapshot</string>
     <string name="complaint_details">Complaint Details</string>
     <string name="complaint_by">Complaint by</string>
     <string name="complaint_type">Complaint type</string>
@@ -442,10 +442,10 @@
     <string name="date_of_planting">Date of Planting *</string>
     <string name="total_area_under_palm_hctr">Total Area under Palm (Hctr)</string>
     <string name="crop_grown_in_left_out_area">Crop grown in left out area</string>
-    <string name="plot_ownership">Plot ownership *</string>
+    <string name="plot_ownership">Field ownership *</string>
     <string name="landlord_gpa_holder_name">Landlord/ GPA Holder Name *</string>
     <string name="contact_number_of_landlord_gpa_holder">Contact number of landlord / GPA Holder *</string>
-    <string name="is_plot_is_looking_after_by_caretaker">Is Plot is looking after by Caretaker?</string>
+    <string name="is_plot_is_looking_after_by_caretaker">Is Field is looking after by Caretaker?</string>
     <string name="caretaker_name">Caretaker Name *</string>
     <string name="caretaker_contact_no">Caretaker Contact No *</string>
     <string name="width_x_depth">Width x Depth *</string>
@@ -458,8 +458,8 @@
     <string name="receipt_date">"Date time"</string>
     <string name="receipt_time">"Time"</string>
     <string name="receipt_number">"Receipt Number"</string>
-    <string name="farmer_ID">"Farmer ID"</string>
-    <string name="farmer_name">"Farmer Name"</string>
+    <string name="farmer_ID">"Grower ID"</string>
+    <string name="farmer_name">"Grower Name"</string>
     <string name="address">"Address"</string>
     <string name="commodity">"Commodity"</string>
     <string name="gross_weight_tonnes">"Gross Weight(Kgs)"</string>
@@ -477,7 +477,7 @@
     <string name="weighbridge_private">"Private WeighBridge"</string>
     <string name="weighbridge_centre_name">"Name of the Weighbridge Centre *"</string>
     <string name="weighing_date_time">"Date and Time of Weighing *"</string>
-    <string name="plotpicture">Plot Picture</string>
+    <string name="plotpicture">Field Picture</string>
     <string name="idproofstitle">ID Proofs</string>
     <string name="identification_details">Identification Details</string>
     <string name="sapling_nursery">Sapling Nursery *</string>
@@ -502,7 +502,7 @@
     <string name="lattitude">Lattitude :</string>
     <string name="address_tag">Address :</string>
     <string name="husband_name">Husband Name *</string>
-    <string name="crops_grown_under_neighbour_plots">Crops Grown under Neighbour Plots</string>
+    <string name="crops_grown_under_neighbour_plots">Crops Grown under Neighbour Fields</string>
     <string name="current_crop_grown_1">Current Crop Grown *</string>
     <string name="area_of_current_crop_1">Area of Current Crop *</string>
     <string name="crop_grown">Crop Grown</string>
@@ -584,7 +584,7 @@
     <string name="new_collection_no_weighbridge">New Collection No Weighbridge</string>
     <string name="no_of_bunches_accepted">No. of bunches (Accepted)</string>
     <string name="consignment_report">Consignment Report</string>
-    <string name="collection_report">Collection Report</string>
+    <string name="collection_report">Fruit Collection Report</string>
     <string name="title_activity_pdf_screen">PdfScreen</string>
     <string name="rescan">Rescan</string>
     <string name="private_weighbridge_centre_name">Private weighbridge center name</string>

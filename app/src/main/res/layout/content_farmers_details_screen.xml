@@ -197,7 +197,7 @@
                         android:layout_width="200dp"
                         android:layout_height="200dp"
                         android:layout_centerVertical="true"
-                        android:src="@mipmap/ic_launcher"
+                        android:src="@mipmap/famer_profile"
                         app:civ_border_color="@color/colorPrimary"
                         app:civ_border_width="4dp" />
 
@@ -224,7 +224,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:paddingLeft="5dp"
-                    android:text="Selected Plots" />
+                    android:text="Selected Fields" />
 
 
                 <TextView
@@ -247,7 +247,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:paddingLeft="5dp"
-                android:text="Plots Information" />
+                android:text="Fields Information" />
 
             <LinearLayout
                 android:id="@+id/bdRLplotdetails"
@@ -265,7 +265,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="Plot Id" />
+                    android:text="Field Id" />
 
                 <TextView
                     android:id="@+id/tvplotlandmark"
@@ -274,7 +274,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/tvtitleplotid"
                     android:layout_weight="1"
-                    android:text="Plot LandMark" />
+                    android:text="Field LandMark" />
 
                 <TextView
                     android:id="@+id/tvplotarea"
@@ -283,7 +283,7 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/tvplotlandmark"
                     android:layout_weight="1"
-                    android:text="Total Plot Area (Ha)" />
+                    android:text="Total Field Area (Ha)" />
 
             </LinearLayout>
 

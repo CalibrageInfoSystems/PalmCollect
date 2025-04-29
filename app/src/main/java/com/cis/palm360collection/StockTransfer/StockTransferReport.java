@@ -63,7 +63,7 @@ public class StockTransferReport extends OilPalmBaseActivity implements onPrintO
     private String fromDateStr = "";
     private String toDateStr = "";
     private StockTransferReportModel selectedReport;
-    private String title = " 3F OILPALM PVT LTD ";
+    private String title = " Palm 360 ";
     private String subTitle = "   Stock Transfer Dispatch Receipt";
     private BluetoothOperation bluetoothOperation;
     private CCDataAccessHandler ccDataAccessHandler;
@@ -421,7 +421,7 @@ public class StockTransferReport extends OilPalmBaseActivity implements onPrintO
         StringBuilder sb = new StringBuilder();
         mPrinter.setPrinter(PrinterConstants.Command.ALIGN, PrinterConstants.Command.ALIGN_CENTER);
         mPrinter.setCharacterMultiple(0, 1);
-        mPrinter.printText(" 3F OILPALM PVT LTD " + "\n");
+        mPrinter.printText(" Palm 360 " + "\n");
         mPrinter.setPrinter(PrinterConstants.Command.ALIGN, PrinterConstants.Command.ALIGN_CENTER);
         mPrinter.setCharacterMultiple(0, 1);
         mPrinter.printText("  Stock Transfer Dispatch Receipt " + "\n");

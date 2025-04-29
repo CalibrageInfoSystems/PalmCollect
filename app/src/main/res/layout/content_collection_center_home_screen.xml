@@ -1,10 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="com.cis.palm360collection.collectioncenter.CollectionCenterHomeScreen">
+
+    <!--   <android.support.design.widget.AppBarLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:theme="@style/AppTheme.AppBarOverlay">
+
+           <android.support.v7.widget.Toolbar
+               android:id="@+id/toolbar"
+               android:layout_width="match_parent"
+               android:layout_height="?attr/actionBarSize"
+               android:background="?attr/colorPrimary"
+               app:popupTheme="@style/AppTheme.PopupOverlay" />
+
+       </android.support.design.widget.AppBarLayout>-->
+
+
+    <LinearLayout
+        android:id="@+id/refreshRel1"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:elevation="10dp"
+android:layout_marginBottom="30dp"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical">
+
+        <!-- Left-aligned Image -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            style="@style/textbasic_title">
+
+        </TextView>
+
+        <!-- This View acts as a Spacer to push right image to the end -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <!-- Right-aligned Image -->
+        <ImageView
+            android:id="@+id/sync_data"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+
+            android:src="@drawable/sync_icon"
+            android:visibility="visible" />
+
+
+    </LinearLayout>
+
+
+
+
+<RelativeLayout
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/content_collection_center_home_screen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="@dimen/activity_horizontal_margin"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -12,309 +82,369 @@
     android:background="@android:color/white"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.cis.palm360collection.collectioncenter.CollectionCenterHomeScreen"
-    tools:showIn="@layout/activity_collection_center_home_screen">
+ >
 
-    <ScrollView
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="#FFFFFF">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <LinearLayout
+            android:orientation="vertical"
+          >
+
+            <!-- Greeting -->
+<!--            <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:visibility="gone"
-                android:orientation="horizontal">
+                android:background="@drawable/homeheaderbg"
 
-                <RelativeLayout
-                    android:id="@+id/newCollectionRel11"
-                    android:layout_width="0dp"
+                android:padding="10dp"
+              >
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1">
 
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
+            </RelativeLayout>-->
 
-                    <ImageView
-                        android:id="@+id/newCollection_logo11"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="16dp"
-                        android:src="@mipmap/collection_icon" />
-
-                    <TextView
-                        android:id="@+id/newCollection_txt11"
-                        style="@style/moduleHomeBtnStyle"
-                        android:layout_below="@+id/newCollection_logo11"
-                        android:text="weighbridge" />
-
-                </RelativeLayout>
-
-            </LinearLayout>
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <!-- Fruit Management Header -->
+         <!--   <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:text="Fruit Management"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#FF6A00"
+                android:layout_marginBottom="8dp" />-->
 
-                <RelativeLayout
-                    android:id="@+id/newCollectionRel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-
-                    <ImageView
-                        android:id="@+id/newCollection_logo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="16dp"
-                        android:src="@mipmap/collection_icon" />
-
-                    <TextView
-                        android:id="@+id/newCollection_txt"
-                        style="@style/moduleHomeBtnStyle"
-                        android:layout_below="@+id/newCollection_logo"
-                        android:text="@string/new_collection" />
-
-                </RelativeLayout>
-
-                <RelativeLayout
-                    android:id="@+id/sendConsignmentRel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-
-                    <ImageView
-                        android:id="@+id/sendConsignment_logo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="16dp"
-                        android:src="@mipmap/consignment_icon" />
-
-                    <TextView
-                        android:id="@+id/sendConsignment_txt"
-                        style="@style/moduleHomeBtnStyle"
-                        android:layout_below="@+id/sendConsignment_logo"
-                        android:text="@string/send_consignment" />
-
-                </RelativeLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <RelativeLayout
+                android:id="@+id/newCollectionRel"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:visibility="visible">
-
-                <RelativeLayout
-                    android:id="@+id/reportsRel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:visibility="visible">
+                android:layout_weight="1">
 
 
-                    <ImageView
-                        android:id="@+id/reports_logo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="16dp"
-                        android:src="@mipmap/reports_icon" />
+                <ImageView
+                    android:id="@+id/newCollection_logo"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/new_collection" />
 
-                    <TextView
-                        android:id="@+id/reports_txt"
-                        style="@style/moduleHomeBtnStyle"
-                        android:layout_below="@+id/reports_logo"
-                        android:text="@string/reports" />
+                <TextView
+                    android:id="@+id/newCollection_txt"
+                    style="@style/moduleHomeBtnStyle"
+                    android:layout_below="@+id/newCollection_logo"
+                    android:text="@string/new_collection" />
 
-                </RelativeLayout>
+            </RelativeLayout>
 
-                <RelativeLayout
-                    android:id="@+id/syncRel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-
-                    <ImageView
-                        android:id="@+id/syncLogo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_marginTop="16dp"
-                        android:src="@mipmap/sycn_icon" />
-
-                    <TextView
-                        android:id="@+id/receiveConsignment_txt"
-                        style="@style/moduleHomeBtnStyle"
-                        android:layout_below="@+id/syncLogo"
-                        android:text="@string/sync" />
-
-                </RelativeLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <RelativeLayout
+                android:id="@+id/sendConsignmentRel"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RelativeLayout
-                    android:id="@+id/stockTransfer_RL"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                android:layout_weight="1">
 
 
-                    <ImageView
-                        android:id="@+id/stockTransfer_icon"
-                        android:layout_width="190dp"
-                        android:layout_height="190dp"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/sendstock" />
+                <ImageView
+                    android:id="@+id/sendConsignment_logo"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/send_consignment" />
 
-                    <TextView
-                        style="@style/moduleHomeBtnStyle"
-                        android:layout_below="@+id/stockTransfer_icon"
-                        android:text="@string/send_stock_transfer" />
+                <TextView
+                    android:id="@+id/sendConsignment_txt"
+                    style="@style/moduleHomeBtnStyle"
+                    android:layout_below="@+id/sendConsignment_logo"
+                    android:text="@string/send_consignment" />
 
-                </RelativeLayout>
+            </RelativeLayout>
+        </LinearLayout>
 
-                <RelativeLayout
-                    android:id="@+id/receiveStock_Rel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
+           <!-- Fruit Management Header -->
+           <!--<TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Fruit Management"
+               android:textStyle="bold"
+               android:textSize="16sp"
+               android:textColor="#FF6A00"
+               android:layout_marginBottom="8dp" />
 
-
-                    <ImageView
-                        android:id="@+id/receiveStock_icon"
-                        android:layout_width="190dp"
-                        android:layout_height="190dp"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/sendstocktransfer"/>
-
-                    <TextView
-                        android:id="@+id/receiveStock_txt"
-                        style="@style/moduleHomeBtnStyle"
-                        android:layout_below="@+id/receiveStock_icon"
-                        android:text="@string/receive_stock_transfer" />
-
-                </RelativeLayout>
+           &lt;!&ndash; First Row &ndash;&gt;
 
 
-            </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:weightSum="2"
+               android:orientation="horizontal">
+               <LinearLayout
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
 
-            <LinearLayout
-                android:layout_width="match_parent"
+                   android:layout_weight="1"
+
+                   android:orientation="vertical"
+                   android:gravity="center">
+
+                   <ImageView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                          android:id="@+id/newCollection_logo"
+                       android:layout_centerInParent="true"
+                       android:src="@drawable/new_collection" />
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Send Consignment"
+                       android:textSize="14sp"
+                       android:layout_marginTop="8dp" />
+               </LinearLayout>
+
+               <LinearLayout
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+
+                   android:layout_weight="1"
+                   android:orientation="vertical"
+                   android:gravity="center">
+
+                   <ImageView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                          android:id="@+id/sendConsignment_logo"
+                       android:src="@drawable/send_consignment" />
+
+                   <TextView
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="Send Consignment"
+                       android:textSize="14sp"
+                       android:layout_marginTop="8dp" />
+               </LinearLayout>
+             &lt;!&ndash;  <RelativeLayout
+                   android:id="@+id/newCollectionRel"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1">
+
+
+                   <ImageView
+                       android:id="@+id/newCollection_logo"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerInParent="true"
+
+                       android:src="@drawable/new_collection" />
+
+                   <TextView
+                       android:id="@+id/newCollection_txt"
+                       style="@style/moduleHomeBtnStyle"
+                       android:layout_below="@+id/newCollection_logo"
+                       android:text="@string/new_collection" />
+
+               </RelativeLayout>
+
+               <RelativeLayout
+                   android:id="@+id/sendConsignmentRel"
+                   android:layout_width="0dp"
+                   android:layout_height="wrap_content"
+                   android:layout_weight="1">
+
+
+                   <ImageView
+                       android:id="@+id/sendConsignment_logo"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:layout_centerInParent="true"
+
+                       android:src="@drawable/send_consignment" />
+
+                   <TextView
+                       android:id="@+id/sendConsignment_txt"
+                       style="@style/moduleHomeBtnStyle"
+                       android:layout_below="@+id/sendConsignment_logo"
+                       android:text="@string/send_consignment" />
+
+               </RelativeLayout>&ndash;&gt;
+           </LinearLayout>-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dialogText"
+            android:orientation="horizontal">
+
+            <RelativeLayout
+                android:id="@+id/stockTransfer_RL"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RelativeLayout
-                    android:id="@+id/log_Rel"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                android:layout_weight="1">
 
 
-                    <ImageView
-                        android:id="@+id/log_icon"
-                        android:layout_width="190dp"
-                        android:layout_height="190dp"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/logbook" />
+                <ImageView
+                    android:id="@+id/stockTransfer_icon"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/send_stock" />
 
-                    <TextView
-                        style="@style/moduleHomeBtnStyle"
-                        android:layout_below="@+id/log_icon"
-                        android:text="@string/log_book" />
+                <TextView
+                    style="@style/moduleHomeBtnStyle"
+                    android:layout_below="@+id/stockTransfer_icon"
+                    android:text="Send Stock" />
 
-                </RelativeLayout>
+            </RelativeLayout>
 
-                <RelativeLayout
-                    android:id="@+id/log_updateFingerprint"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-
-                    <ImageView
-                        android:id="@+id/fingerprint_icon"
-                        android:layout_width="190dp"
-                        android:layout_height="190dp"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/logbook" />
-
-                    <TextView
-                        style="@style/moduleHomeBtnStyle"
-                        android:layout_below="@+id/fingerprint_icon"
-                        android:text="Update Fingerprints" />
-
-                </RelativeLayout>
-
-
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
+            <RelativeLayout
+                android:id="@+id/receiveStock_Rel"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <RelativeLayout
-                    android:id="@+id/verifyFingerprint"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
+                android:layout_weight="1">
 
 
-                    <ImageView
-                        android:id="@+id/verifyfingerprint_icon"
-                        android:layout_width="190dp"
-                        android:layout_height="190dp"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/logbook" />
+                <ImageView
+                    android:id="@+id/receiveStock_icon"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/receive_stock"/>
 
-                    <TextView
-                        style="@style/moduleHomeBtnStyle"
-                        android:layout_below="@+id/verifyfingerprint_icon"
-                        android:text="Verify Fingerprints" />
+                <TextView
+                    android:id="@+id/receiveStock_txt"
+                    style="@style/moduleHomeBtnStyle"
+                    android:layout_below="@+id/receiveStock_icon"
+                    android:text="@string/receive_stock_transfer" />
 
-                </RelativeLayout>
-
-<!--                <RelativeLayout-->
-<!--                    android:id="@+id/log_updateFingerprint"-->
-<!--                    android:layout_width="0dp"-->
-<!--                    android:layout_height="wrap_content"-->
-<!--                    android:layout_weight="1">-->
-
-
-<!--                    <ImageView-->
-<!--                        android:id="@+id/fingerprint_icon"-->
-<!--                        android:layout_width="190dp"-->
-<!--                        android:layout_height="190dp"-->
-<!--                        android:layout_centerInParent="true"-->
-<!--                        android:src="@drawable/logbook" />-->
-
-<!--                    <TextView-->
-<!--                        style="@style/moduleHomeBtnStyle"-->
-<!--                        android:layout_below="@+id/fingerprint_icon"-->
-<!--                        android:text="Update Fingerprints" />-->
-
-<!--                </RelativeLayout>-->
-
-
-            </LinearLayout>
-
-
+            </RelativeLayout>
 
 
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:id="@+id/reportsRel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:visibility="visible">
+
+
+                <ImageView
+                    android:id="@+id/reports_logo"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_centerInParent="true"
+
+                    android:src="@drawable/reports" />
+
+                <TextView
+                    android:id="@+id/reports_txt"
+                    style="@style/moduleHomeBtnStyle"
+                    android:layout_below="@+id/reports_logo"
+                    android:text="@string/reports" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/log_Rel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+
+                <ImageView
+                    android:id="@+id/log_icon"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/log" />
+
+                <TextView
+                    style="@style/moduleHomeBtnStyle"
+                    android:layout_below="@+id/log_icon"
+                    android:text="@string/log_book" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+
+            <RelativeLayout
+                android:id="@+id/log_updateFingerprint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+
+                <ImageView
+                    android:id="@+id/fingerprint_icon"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/update" />
+
+                <TextView
+                    style="@style/moduleHomeBtnStyle"
+                    android:layout_below="@+id/fingerprint_icon"
+                    android:text="Update Fingerprints" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/verifyFingerprint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+
+                <ImageView
+                    android:id="@+id/verifyfingerprint_icon"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/verify" />
+
+                <TextView
+                    style="@style/moduleHomeBtnStyle"
+                    android:layout_below="@+id/verifyfingerprint_icon"
+                    android:text="Verify Fingerprints" />
+
+            </RelativeLayout>
+        </LinearLayout>
+        </LinearLayout>
     </ScrollView>
 
+
+
 </RelativeLayout>
+</android.support.design.widget.CoordinatorLayout>

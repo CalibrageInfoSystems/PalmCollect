@@ -880,11 +880,12 @@ public class PrintReceipt extends BaseFragment implements BluetoothDevicesFragme
         StringBuilder sb = new StringBuilder();
         mPrinter.setPrinter(PrinterConstants.Command.ALIGN, PrinterConstants.Command.ALIGN_CENTER);
         mPrinter.setCharacterMultiple(0, 1);
+        mPrinter.printText(" Palm 360\n"); // Not ideal but looks similar
 
-        mPrinter.printText(" 3F OILPALM PVT LTD " + "\n");
+//        mPrinter.printText(" 3F OILPALM PVT LTD " + "\n");
         mPrinter.setPrinter(PrinterConstants.Command.ALIGN, PrinterConstants.Command.ALIGN_CENTER);
         mPrinter.setCharacterMultiple(0, 1);
-        mPrinter.printText("  Collection Receipt " + "\n");
+        mPrinter.printText("  Fruit Collection Receipt " + "\n");
         mPrinter.setPrinter(PrinterConstants.Command.ALIGN, PrinterConstants.Command.ALIGN_LEFT);
         mPrinter.setCharacterMultiple(0, 0);
         /*mPrinter.setLeftMargin(15, 15);*/
@@ -940,11 +941,11 @@ public class PrintReceipt extends BaseFragment implements BluetoothDevicesFragme
 
         if (!basicFarmerDetails.getFarmerCode().startsWith("FFBFARMER")) {
             sb.append(" ");
-            sb.append(" Farmer ID: ");
+            sb.append(" Grower ID: ");
             sb.append(" ").append(basicFarmerDetails.getFarmerCode()).append("\n");
 
             sb.append(" ");
-            sb.append(" Farmer Name: ");
+            sb.append(" Grower Name: ");
             sb.append(" ").append(farmerName).append("\n");
 
             sb.append(" ");
@@ -1187,7 +1188,7 @@ public class PrintReceipt extends BaseFragment implements BluetoothDevicesFragme
         sb.append("\n");
         sb.append(" ");
         sb.append("\n");
-        sb.append(" Farmer signature");
+        sb.append(" Grower signature");
         sb.append(" ");
         sb.append("\n");
         sb.append(" ");
@@ -1244,7 +1245,7 @@ public class PrintReceipt extends BaseFragment implements BluetoothDevicesFragme
                         saveCollectionData();
                     }
                 })
-                .setIcon(R.mipmap.ic_launcher)
+                .setIcon(R.mipmap.famer_profile)
                 .show();
     }
 

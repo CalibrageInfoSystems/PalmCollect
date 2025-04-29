@@ -182,7 +182,7 @@ public class CCDataAccessHandler {
         List<PlotDetailsObj> plotDetailslistObj = new ArrayList<>();
         Cursor cursor = null;
         String query = Queries.getInstance().getPlotDetailsForCC(farmerCode.trim());
-        Log.v(LOG_TAG, "Query for getting plots related to farmer "+query);
+        Log.v(LOG_TAG, "Query for getting Fields related to farmer "+query);
         try {
             cursor = mDatabase.rawQuery(query, null);
             if (cursor != null && cursor.moveToFirst()) {

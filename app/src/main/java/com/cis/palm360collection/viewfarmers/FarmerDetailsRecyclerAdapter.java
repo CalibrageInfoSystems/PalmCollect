@@ -84,7 +84,7 @@ public class FarmerDetailsRecyclerAdapter extends RecyclerView.Adapter<FarmerDet
                         //Try again online if cache failed
                         Picasso.with(context)
                                 .load(imageUrl)
-                                .error(R.mipmap.ic_launcher)
+                                .error(R.mipmap.famer_profile)
                                 .into(holder.userImage, new Callback() {
                                     @Override
                                     public void onSuccess() {

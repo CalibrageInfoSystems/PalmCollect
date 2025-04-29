@@ -374,7 +374,7 @@ public class FarmersDetailsScreen extends OilPalmBaseActivity implements FarmerP
                             }
 
                         } else {
-                            UiUtils.showCustomToastMessage("Please select plot to proceed", FarmersDetailsScreen.this, 1);
+                            UiUtils.showCustomToastMessage("Please select filed to proceed", FarmersDetailsScreen.this, 1);
                         }
 
                     }
@@ -474,8 +474,8 @@ public class FarmersDetailsScreen extends OilPalmBaseActivity implements FarmerP
                     public void onError() {
                         Picasso.with(FarmersDetailsScreen.this)
                                 .load(CommonUtils.getImageUrl(basicFarmerDetails))
-                                .placeholder(R.mipmap.ic_launcher)
-                                .error(R.mipmap.ic_launcher)
+                                .placeholder(R.mipmap.famer_profile)
+                                .error(R.mipmap.famer_profile)
                                 .into(userImage);
                     }
                 });

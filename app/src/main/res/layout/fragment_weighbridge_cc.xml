@@ -131,6 +131,7 @@
 
                     <LinearLayout
                         android:layout_width="fill_parent"
+                        android:layout_marginTop="10dp"
                         android:layout_height="wrap_content">
 
                         <TextView
@@ -230,6 +231,7 @@
 
                     <LinearLayout
                         android:layout_width="fill_parent"
+                        android:layout_marginTop="10dp"
                         android:layout_height="wrap_content">
 
                         <TextView
@@ -975,33 +977,57 @@
                     android:layout_height="2dp"
                     android:background="@color/colorPrimary" />
 
-                <LinearLayout
-                    android:id="@+id/isloosefruitavailableLL"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_marginTop="10dp"
-                    android:visibility="visible"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp">
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/isloosefruitavailableLL"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal"-->
+<!--                    android:layout_marginTop="10dp"-->
+<!--                    android:visibility="visible"-->
+<!--          -->
+<!--                    android:layout_marginLeft="10dp"-->
+<!--                    android:layout_marginRight="10dp">-->
 
-                    <TextView
-                        android:id="@+id/isloosefruitavailableText"
-                        style="@style/header_h1_text_title"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center"
-                        android:layout_weight="1"
-                        android:text="Is Loose Fruit Available? *" />
+<!--                    <TextView-->
+<!--                        android:id="@+id/isloosefruitavailableText"-->
+<!--                        style="@style/header_h1_text_title"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:text="Is Loose Fruit Available? *" />-->
 
-                    <Spinner
-                        android:id="@+id/isloosefruitavailable_spinner"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@drawable/spinner_bg" />
-                </LinearLayout>
+<!--                    <Spinner-->
+<!--                        android:id="@+id/isloosefruitavailable_spinner"-->
+<!--                        android:layout_width="0dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_weight="1"-->
+<!--                        android:background="@drawable/spinner_bg" />-->
+<!--                </LinearLayout>-->
+                        <LinearLayout
+                            android:layout_width="fill_parent"
+                            android:id="@+id/isloosefruitavailableLL"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
 
+                            <TextView
+                                android:id="@+id/isloosefruitavailableText"
+                                style="@style/header_h1_text_title"
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:layout_gravity="center"
+                                android:layout_weight="1"
+                                android:text="Is Loose Fruit Available? *" />
+
+
+                            <Spinner
+                                android:id="@+id/isloosefruitavailable_spinner"
+                                style="@style/spinner_bg"
+                                android:layout_width="0dp"
+                                android:layout_height="fill_parent"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
                 <LinearLayout
                     android:id="@+id/loosefruitweightLL"
                     android:layout_width="match_parent"

@@ -37,7 +37,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rounded_edittext"
-                android:hint="Search by name or mobile number or farmer code"
+                android:hint="Search by name or mobile number or grower code"
                 android:inputType="textNoSuggestions|textVisiblePassword"
                 android:padding="6dp"
                 android:textColor="@color/action_color"

@@ -69,9 +69,9 @@ public class LoginScreen extends AppCompatActivity {
         this.passwordEdit = (EditText) findViewById(R.id.passwordEdit);
         this.userID = (EditText) findViewById(R.id.userID);
         this.sync=(FloatingActionButton) findViewById(R.id.sync);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.login_screen);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        toolbar.setTitle(R.string.login_screen);
+//        setSupportActionBar(toolbar);
         CommonUtils.currentActivity = this;
 
         SharedPrefManager.set_isDataSyncRunning(false);
@@ -90,8 +90,8 @@ public class LoginScreen extends AppCompatActivity {
         final UserDetails userDetails = dataAccessHandler.getUserDetails(CommonUtils.getIMEInumberID(this));
 
         if (null != userDetails) {
-            userID.setText(userDetails.getUserName());
-            passwordEdit.setText(userDetails.getPassword());
+            userID.setText(" "+userDetails.getUserName());
+            passwordEdit.setText(" "+    userDetails.getPassword());
 
 
             List userVillages = dataAccessHandler.getSingleListData(Queries.getInstance().getUserVillages(userDetails.getId()));

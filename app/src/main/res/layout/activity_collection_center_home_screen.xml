@@ -7,7 +7,7 @@
     android:fitsSystemWindows="true"
     tools:context="com.cis.palm360collection.collectioncenter.CollectionCenterHomeScreen">
 
-    <android.support.design.widget.AppBarLayout
+ <!--   <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:theme="@style/AppTheme.AppBarOverlay">
@@ -19,8 +19,49 @@
             android:background="?attr/colorPrimary"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
-    </android.support.design.widget.AppBarLayout>
+    </android.support.design.widget.AppBarLayout>-->
 
+
+    <LinearLayout
+        android:id="@+id/refreshRel1"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:elevation="10dp"
+
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:orientation="horizontal"
+        android:background="@color/colorPrimary"
+        android:gravity="center_vertical">
+
+        <!-- Left-aligned Image -->
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/app_name"
+    android:textColor="@color/white"
+    style="@style/textbasic_title">
+
+</TextView>
+
+        <!-- This View acts as a Spacer to push right image to the end -->
+        <View
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <!-- Right-aligned Image -->
+        <ImageView
+            android:id="@+id/sync_data"
+            android:layout_width="40dp"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+
+            android:src="@drawable/sync_icon"
+            android:visibility="visible" />
+
+
+    </LinearLayout>
     <include layout="@layout/content_collection_center_home_screen" />
     
 </android.support.design.widget.CoordinatorLayout>

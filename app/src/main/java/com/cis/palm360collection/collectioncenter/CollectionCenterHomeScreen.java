@@ -21,6 +21,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,6 +54,7 @@ import com.cis.palm360collection.database.DataAccessHandler;
 import com.cis.palm360collection.database.Queries;
 import com.cis.palm360collection.datasync.RefreshSyncActivity;
 import com.cis.palm360collection.datasync.helpers.DataManager;
+import com.cis.palm360collection.dbmodels.UserDetails;
 import com.cis.palm360collection.helper.PrefUtil;
 import com.cis.palm360collection.ui.OilPalmBaseActivity;
 import com.cis.palm360collection.utils.SharedPrefManager;
@@ -75,7 +77,7 @@ import static com.cis.palm360collection.datasync.helpers.DataManager.EXTRA_PLOTS
 import static com.cis.palm360collection.ui.SplashScreen.palm3FoilDatabase;
 
 //Home Screen
-public class CollectionCenterHomeScreen extends OilPalmBaseActivity {
+public class CollectionCenterHomeScreen extends AppCompatActivity {
     RelativeLayout newCollectionRel11;
     public static final String NEW_COLLECTION = "new_collection";
     public static final String CHANGE_COLLECTION_CENTER = "chenge_collection_center";
@@ -94,6 +96,7 @@ public class CollectionCenterHomeScreen extends OilPalmBaseActivity {
     RelativeLayout log_updateFingerprint;
     LocationListener ll;
     private String days;
+    TextView user_name;
     public static String PREVIOUS_DELETE_DATE = "";
     private DataAccessHandler dataAccessHandler;
 
@@ -164,26 +167,31 @@ public class CollectionCenterHomeScreen extends OilPalmBaseActivity {
         super.onStop();
         Log.i(LOG_TAG, "EventBus.getDefault().unregister(this)");
     }
-
-    //Intializing the Class
     @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.content_collection_center_home_screen);
+
+
+        //Intializing the Class
+/*    @Override
     public void Initialize() {
         LayoutInflater inflater = LayoutInflater.from(this);
         View parentView = inflater.inflate(R.layout.content_collection_center_home_screen, null);
-        baseLayout.addView(parentView, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-        setTile(getString(R.string.collection_center));
+  baseLayout.addView(parentView, new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
+        setTile(getString(R.string.app_name));*/
         ccDataAccessHandler = new CCDataAccessHandler(this);
         this.newCollectionRel = findViewById(R.id.newCollection_logo);
-        newCollectionRel11=findViewById(R.id.newCollectionRel11);
+  //      newCollectionRel11=findViewById(R.id.newCollectionRel11);
         this.sendConsignmentRel = findViewById(R.id.sendConsignment_logo);
         log_icon = findViewById(R.id.log_icon);
-        syncRel = findViewById(R.id.syncLogo);
+       syncRel = findViewById(R.id.sync_data);
         reportsRel = findViewById(R.id.reports_logo);
         receiveStockRel = findViewById(R.id.receiveStock_icon);
         sendStockTransferRL = findViewById(R.id.stockTransfer_icon);
         dataAccessHandler = new DataAccessHandler(this);
         log_updateFingerprint = findViewById(R.id.log_updateFingerprint);
-
+      //  user_name = findViewById(R.id.user_name);
         fingerprint_icon = findViewById(R.id.fingerprint_icon);
         verifyfingerprint_icon = findViewById(R.id.verifyfingerprint_icon);
 
@@ -192,6 +200,8 @@ public class CollectionCenterHomeScreen extends OilPalmBaseActivity {
 
         String result= dataAccessHandler.getCountValue(Queries.getInstance().getfingerprintActivityright(CommonConstants.USER_RoleID));
         Log.e("==============>result",result+"");
+     /*   final UserDetails userDetails = dataAccessHandler.getUserDetails(CommonUtils.getIMEInumberID(this));
+        user_name.setText("Hello\n" + userDetails.getFirstName());*/
         if (result.equalsIgnoreCase("1")) {
             log_updateFingerprint.setVisibility(View.VISIBLE); // Set visibility to visible
         } else {
@@ -278,12 +288,12 @@ public class CollectionCenterHomeScreen extends OilPalmBaseActivity {
 
             }
         });
-        newCollectionRel11.setOnClickListener(new View.OnClickListener() {
+/*        newCollectionRel11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(CollectionCenterHomeScreen.this, New_WeighbridgeActivity.class));
             }
-        });
+        });*/
 
         //Collection On Click Listener
         newCollectionRel.setOnClickListener(new View.OnClickListener() {
@@ -393,7 +403,7 @@ public class CollectionCenterHomeScreen extends OilPalmBaseActivity {
         });
 
 
-        //Sync On Click Listener
+        //Sync On Click Listener TODO
         syncRel.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -786,7 +796,7 @@ public class CollectionCenterHomeScreen extends OilPalmBaseActivity {
 
             //Navigations
 
-            RelativeLayout type1 = (RelativeLayout) view.findViewById(R.id.collectionreport_cc_rel);
+            Button type1 = (Button) view.findViewById(R.id.collection_report);
             type1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -795,7 +805,7 @@ public class CollectionCenterHomeScreen extends OilPalmBaseActivity {
                 }
             });
 
-            RelativeLayout type2 = (RelativeLayout) view.findViewById(R.id.consignmentteport_private_rel);
+            Button type2 = (Button) view.findViewById(R.id.consignment_report);
             type2.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -804,7 +814,7 @@ public class CollectionCenterHomeScreen extends OilPalmBaseActivity {
                 }
             });
 
-            RelativeLayout stockTransferRl = view.findViewById(R.id.stockTransferRL);
+            Button stockTransferRl = view.findViewById(R.id.stockTransferRL);
 
             stockTransferRl.setOnClickListener(new View.OnClickListener() {
                 @Override

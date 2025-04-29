@@ -340,7 +340,7 @@ public class StockTransferReceipt extends BaseFragment implements BluetoothDevic
         StringBuilder sb = new StringBuilder();
         mPrinter.setPrinter(PrinterConstants.Command.ALIGN, PrinterConstants.Command.ALIGN_CENTER);
         mPrinter.setCharacterMultiple(0, 1);
-        mPrinter.printText(" 3F OILPALM PVT LTD " + "\n");
+        mPrinter.printText(" Palm 360 " + "\n");
         mPrinter.setPrinter(PrinterConstants.Command.ALIGN, PrinterConstants.Command.ALIGN_CENTER);
         mPrinter.setCharacterMultiple(0, 1);
         mPrinter.printText("  Stock Transfer Dispatch Receipt " + "\n");

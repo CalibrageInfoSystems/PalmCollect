@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#f15f22</color>
+    <color name="colorPrimary">#122d59</color>
 
     <color name="colorPalmCornor">#fad4da</color>
 
-    <color name="recorder_bg">#F4511E</color>
+    <color name="recorder_bg">#0B3780</color>
 
-    <color name="colorPrimaryDark">#006709</color>
+    <color name="colorPrimaryDark">#1A5FCF</color>
 
     <color name="colorAccent">#052353</color>
     <color name="header_txt">#000000</color>
@@ -37,5 +37,5 @@
     <color name="red">#FFC93437</color>
     <color name="blue">#FF375BF1</color>
     <color name="yellow">#FFF7D23E</color>
-    <color name="green">#FF34A350</color>
+    <color name="green">#f15f22  </color>
 </resources>

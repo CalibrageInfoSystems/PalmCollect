@@ -55,8 +55,8 @@ public class CollectionReport extends OilPalmBaseActivity implements onPrintOpti
     private String fromDateStr = "";
     private String toDateStr = "";
     private CollectionReportModel selectedReport;
-    private String title = " 3F OILPALM PVT LTD ";
-    private String subTitle = " Collection Receipt ";
+    private String title = " Palm 360 ";
+    private String subTitle = " Fruit Collection Receipt ";
     private BluetoothDevicesFragment bluetoothDevicesFragment = null;
     private UsbDevicesListFragment usbDevicesListFragment = null;
     String   currentDate_am_pm;
@@ -398,10 +398,10 @@ public class CollectionReport extends OilPalmBaseActivity implements onPrintOpti
 //        sb.append(" ");
 //        sb.append(" Vehicle Number: " + selectedReport.getVehicleNumber() + "\n");
         sb.append(" ");
-        sb.append(" Farmer ID: ");
+        sb.append(" Grower ID: ");
         sb.append(" " + selectedReport.getFarmerCode() + "\n");
         sb.append(" ");
-        sb.append(" Farmer Name: ");
+        sb.append(" Grower Name: ");
         sb.append(" " + farmerName + "\n");
         sb.append(" ");
 //        String account[] = selectedReport.getBankAccountNumber().split("@");
@@ -533,7 +533,7 @@ public class CollectionReport extends OilPalmBaseActivity implements onPrintOpti
         sb.append("\n");
         sb.append(" ");
         sb.append("\n");
-        sb.append(" Farmer signature");
+        sb.append(" Grower signature");
         sb.append(" ");
         sb.append("\n");
         sb.append(" ");

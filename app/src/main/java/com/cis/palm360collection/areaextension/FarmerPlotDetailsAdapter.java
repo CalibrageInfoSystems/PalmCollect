@@ -58,7 +58,7 @@ public class FarmerPlotDetailsAdapter extends SelectableAdapter<FarmerPlotDetail
             holder.tvlandmark.setVisibility(View.GONE);
         }
 
-        holder.tvplotarea.setText("Plot size: "+plotdetailsObj.getPlotArea() + " Ha");
+        holder.tvplotarea.setText("Field size: "+plotdetailsObj.getPlotArea() + " Ha");
         holder.tvplotvillage.setText(plotdetailsObj.getVillageName());
         holder.tvplotsurveynumber.setText(plotdetailsObj.getSurveyNumber());
         holder.selectionChk.setChecked(isSelected(position));
