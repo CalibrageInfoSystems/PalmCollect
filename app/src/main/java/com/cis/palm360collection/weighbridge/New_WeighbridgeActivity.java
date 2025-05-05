@@ -3,9 +3,10 @@ package com.cis.palm360collection.weighbridge;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
 
 import com.cis.palm360collection.R;
 
@@ -38,14 +39,14 @@ public class New_WeighbridgeActivity extends AppCompatActivity implements Fragme
         return true;
     }
 
-    @Override
-    protected void onNewIntent(Intent intent) {
-        if(intent.getAction().equals("android.hardware.usb.action.USB_DEVICE_ATTACHED")) {
-            TerminalFragment terminal = (TerminalFragment)getSupportFragmentManager().findFragmentByTag("terminal");
-            if (terminal != null)
-                terminal.status("USB device detected");
-        }
-        super.onNewIntent(intent);
-    }
+//    @Override
+//    protected void onNewIntent(Intent intent) {
+//        if(intent.getAction().equals("android.hardware.usb.action.USB_DEVICE_ATTACHED")) {
+//            TerminalFragment terminal = (TerminalFragment)getSupportFragmentManager().findFragmentByTag("terminal");
+//            if (terminal != null)
+//                terminal.status("USB device detected");
+//        }
+//        super.onNewIntent(intent);
+//    }
 
 }

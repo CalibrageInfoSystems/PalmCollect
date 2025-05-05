@@ -12,10 +12,11 @@ import android.location.LocationManager;
 import android.os.Bundle;
 import android.os.IBinder;
 import android.os.PowerManager;
-import android.support.annotation.Nullable;
-import android.support.v4.app.ActivityCompat;
 import android.text.TextUtils;
 import android.util.Log;
+
+import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 
 import com.cis.palm360collection.activitylogdetails.LatLongListener;
 import com.cis.palm360collection.activitylogdetails.LocationProvider;

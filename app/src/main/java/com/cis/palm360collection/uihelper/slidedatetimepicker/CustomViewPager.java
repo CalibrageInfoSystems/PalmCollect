@@ -1,7 +1,6 @@
 package com.cis.palm360collection.uihelper.slidedatetimepicker;
 
 import android.content.Context;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
@@ -9,16 +8,9 @@ import android.view.ViewConfiguration;
 import android.widget.DatePicker;
 import android.widget.TimePicker;
 
-import com.cis.palm360collection.R;
+import androidx.viewpager.widget.ViewPager;
 
-/**
- * A custom {@link ViewPager} implementation that corrects
- * the height of the ViewPager and also dispatches touch events to either the ViewPager
- * or the date or time picker depending on the direction of the swipe.
- *
- * @author jjobes
- *
- */
+import com.cis.palm360collection.R;
 
 //Not Using
 

@@ -9,7 +9,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.SystemClock;
-import android.support.annotation.RequiresApi;
+
+import androidx.annotation.RequiresApi;
 
 import com.cis.palm360collection.BroadCastReciver.AlarmReceiver;
 
@@ -27,7 +28,7 @@ public class AutoSync {
         AlarmManager manager = (AlarmManager)context. getSystemService(Context.ALARM_SERVICE);
         int interval = 1000 * 60 * 20;
         Intent alarmIntent = new Intent(context, AlarmReceiver.class);
-        pendingIntent = PendingIntent.getBroadcast(context, 0, alarmIntent, 0);
+        pendingIntent = PendingIntent.getBroadcast(context, 0, alarmIntent, PendingIntent.FLAG_IMMUTABLE);
         /* Set the alarm to start at 10:30 AM */
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());

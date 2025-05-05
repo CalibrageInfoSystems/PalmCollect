@@ -3,9 +3,6 @@ package com.cis.palm360collection.collectioncenter;
 import static com.cis.palm360collection.ui.SplashScreen.palm3FoilDatabase;
 
 import android.app.DatePickerDialog;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +12,10 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.print.sdk.PrinterConstants;
 import com.android.print.sdk.PrinterInstance;

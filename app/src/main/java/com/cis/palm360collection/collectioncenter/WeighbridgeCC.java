@@ -19,11 +19,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.FileProvider;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.InputType;
@@ -100,6 +95,11 @@ import static com.cis.palm360collection.datasync.helpers.DataManager.SELECTED_FA
 import static com.cis.palm360collection.datasync.helpers.DataManager.USER_DETAILS;
 import static com.cis.palm360collection.ui.SplashScreen.palm3FoilDatabase;
 
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.FileProvider;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
 import SecuGen.FDxSDKPro.JSGFPLib;
 import SecuGen.FDxSDKPro.SGAutoOnEventNotifier;
 import SecuGen.FDxSDKPro.SGFDxErrorCode;
@@ -108,9 +108,6 @@ import SecuGen.FDxSDKPro.SGFDxTemplateFormat;
 import SecuGen.FDxSDKPro.SGFingerInfo;
 import SecuGen.FDxSDKPro.SGImpressionType;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 
 //Fill Collection Details Screen
 public class WeighbridgeCC extends BaseFragment {

@@ -3,11 +3,6 @@ package com.cis.palm360collection.collectioncenter;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,6 +43,12 @@ import static com.cis.palm360collection.datasync.helpers.DataManager.EXTRA_PLOTS
 import static com.cis.palm360collection.datasync.helpers.DataManager.EXTRA_SELECTED_FARMER_PLOT_DATA;
 import static com.cis.palm360collection.datasync.helpers.DataManager.SELECTED_FARMER_DATA;
 import static com.cis.palm360collection.datasync.helpers.DataManager.SELECTED_FARMER_PLOT_DATA;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import SecuGen.FDxSDKPro.JSGFPLib;
 import SecuGen.FDxSDKPro.SGAutoOnEventNotifier;
@@ -455,13 +456,13 @@ public class FarmersDetailsScreen extends OilPalmBaseActivity implements FarmerP
 //        Toast.makeText(getApplicationContext(),"First 3 characters"+firstthree,Toast.LENGTH_LONG).show();
 
         if (null != basicFarmerDetails.getPhotoLocation()) {
-            Picasso.with(this).load(new File(basicFarmerDetails.getPhotoLocation())).into(userImage);
+            Picasso.get().load(new File(basicFarmerDetails.getPhotoLocation())).into(userImage);
         } else {
             userImage.setImageResource(R.mipmap.app_logo);
             userImage.invalidate();
         }
 
-        Picasso.with(this)
+        Picasso.get()
                 .load(CommonUtils.getImageUrl(basicFarmerDetails))
                 .networkPolicy(NetworkPolicy.OFFLINE)
                 .into(userImage, new Callback() {
@@ -471,13 +472,14 @@ public class FarmersDetailsScreen extends OilPalmBaseActivity implements FarmerP
                     }
 
                     @Override
-                    public void onError() {
-                        Picasso.with(FarmersDetailsScreen.this)
+                    public void onError(Exception e) {
+                        Picasso.get()
                                 .load(CommonUtils.getImageUrl(basicFarmerDetails))
                                 .placeholder(R.mipmap.famer_profile)
                                 .error(R.mipmap.famer_profile)
                                 .into(userImage);
                     }
+
                 });
     }
 

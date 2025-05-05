@@ -12,8 +12,6 @@ import android.os.Build
 import android.os.Bundle
 import android.os.Environment
 import android.provider.MediaStore
-import android.support.v4.app.ActivityCompat
-import android.support.v4.content.FileProvider
 import android.text.Editable
 import android.text.TextUtils
 import android.text.TextWatcher
@@ -29,6 +27,8 @@ import android.widget.LinearLayout
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.FileProvider
 import com.cis.palm360collection.BuildConfig
 
 import com.cis.palm360collection.cloudhelper.Log
@@ -108,7 +108,7 @@ class SendStockTransfer : BaseFragment() {
         val inflater = LayoutInflater.from(activity)
         parentView = inflater.inflate(R.layout.fragment_sendstocktransfer, null)
         baseLayout.addView(parentView, LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT))
-        setTile(activity!!.resources.getString(R.string.send_stock_transfer))
+        setTile(requireActivity().resources.getString(R.string.send_stock_transfer))
         val collectionCenterName = parentView!!.findViewById<TextView>(R.id.collection_center_name)
         val collectionCenterCode = parentView!!.findViewById<TextView>(R.id.collection_center_code)
         val collectionCenterVillage = parentView!!.findViewById<TextView>(R.id.collection_center_village)
@@ -182,7 +182,7 @@ class SendStockTransfer : BaseFragment() {
 
 
         //Binding To CC Spinner Data
-        val collectionSpinnerArrayAdapter = ArrayAdapter(activity!!, android.R.layout.simple_spinner_item, finalCollectionCenterNames)
+        val collectionSpinnerArrayAdapter = ArrayAdapter(requireActivity(), android.R.layout.simple_spinner_item, finalCollectionCenterNames)
         collectionSpinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         toCC!!.adapter = collectionSpinnerArrayAdapter
 
@@ -190,7 +190,7 @@ class SendStockTransfer : BaseFragment() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && !CommonUtils.isPermissionAllowed(activity, Manifest.permission.CAMERA)) {
                 com.cis.palm360collection.cloudhelper.Log.v(LOG_TAG, "Location Permissions Not Granted")
                 ActivityCompat.requestPermissions(
-                    activity!!,
+                    requireActivity(),
                     PERMISSIONS_STORAGE,
                     REQUEST_CAM_PERMISSIONS
                 )
@@ -566,7 +566,7 @@ class SendStockTransfer : BaseFragment() {
         val f = File(mStockTransferImage!!)
         val contentUri = Uri.fromFile(f)
         mediaScanIntent.data = contentUri
-        activity!!.sendBroadcast(mediaScanIntent)
+        requireActivity().sendBroadcast(mediaScanIntent)
     }
 
     @Throws(IOException::class)
@@ -604,7 +604,7 @@ class SendStockTransfer : BaseFragment() {
                 try {
                     f = setUpPhotoFile()
                     mStockTransferImage = f.absolutePath
-                    val photoURI = FileProvider.getUriForFile(activity!!,
+                    val photoURI = FileProvider.getUriForFile(requireActivity(),
                         BuildConfig.APPLICATION_ID + ".provider",
                         f)
                     takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)

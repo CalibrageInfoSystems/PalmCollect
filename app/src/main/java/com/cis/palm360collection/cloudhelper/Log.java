@@ -1,8 +1,8 @@
 package com.cis.palm360collection.cloudhelper;
-
-import com.crashlytics.android.Crashlytics;
-
-import io.fabric.sdk.android.Fabric;
+//
+//import com.crashlytics.android.Crashlytics;
+//
+//import io.fabric.sdk.android.Fabric;
 
 
 //Common Log Class
@@ -60,27 +60,27 @@ public class Log {
     /**
      * Crashlytics Exception
      */
-    public static void pushExceptionToCrashlytics(Exception e) {
-        if (Fabric.isInitialized())
-            Crashlytics.logException(e);
+//    public static void pushExceptionToCrashlytics(Exception e) {
+//        if (Fabric.isInitialized())
+//            Crashlytics.logException(e);
+//
+//    }
 
-    }
+//    public static void pushExceptionToCrashlytics(String tag, Exception e, String message) {
+//        e(tag, e.getMessage());
+//        if (Fabric.isInitialized())
+//            //pushExceptionToCrashlytics(e);
+//        Crashlytics.log(message);
+//    }
+//
+//
+//    public static void pushExceptionToCrashlytics(String tag, String msg, Exception e) {
+//        e(tag, msg, e);
+//        //pushExceptionToCrashlytics(e);
+//    }
 
-    public static void pushExceptionToCrashlytics(String tag, Exception e, String message) {
-        e(tag, e.getMessage());
-        if (Fabric.isInitialized())
-            pushExceptionToCrashlytics(e);
-        Crashlytics.log(message);
-    }
-
-
-    public static void pushExceptionToCrashlytics(String tag, String msg, Exception e) {
-        e(tag, msg, e);
-        pushExceptionToCrashlytics(e);
-    }
-
-    public static void pushLogToCrashlytics(String msg) {
-        if (Fabric.isInitialized())
-            Crashlytics.log(msg);
-    }
+//    public static void pushLogToCrashlytics(String msg) {
+//        if (Fabric.isInitialized())
+//            Crashlytics.log(msg);
+//    }
 }

@@ -9,9 +9,10 @@ import android.content.pm.PackageManager;
 import android.hardware.usb.UsbManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.cis.palm360collection.R;
 import com.cis.palm360collection.cloudhelper.ApplicationThread;
@@ -30,7 +31,7 @@ import SecuGen.FDxSDKPro.JSGFPLib;
 
 
 //Splash Screen
-public class SplashScreen extends AppCompatActivity{
+public class SplashScreen extends AppCompatActivity {
 
     public static final String LOG_TAG = SplashScreen.class.getName();
 
@@ -57,7 +58,7 @@ public class SplashScreen extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        mPermissionIntent = PendingIntent.getBroadcast(this, 0, new Intent(ACTION_USB_PERMISSION), 0);
+        mPermissionIntent = PendingIntent.getBroadcast(this, 0, new Intent(ACTION_USB_PERMISSION), PendingIntent.FLAG_IMMUTABLE);
         filter = new IntentFilter(ACTION_USB_PERMISSION);
         sgfplib = new JSGFPLib(this, (UsbManager) this.getSystemService(Context.USB_SERVICE));
 
@@ -84,6 +85,7 @@ public class SplashScreen extends AppCompatActivity{
     //Request Permissions Result
     @Override
     public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case CommonUtils.PERMISSION_CODE:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -93,7 +95,7 @@ public class SplashScreen extends AppCompatActivity{
                         palm3FoilDatabase.createDataBase();
                         dbUpgradeCall();
                     } catch (Exception e) {
-                       Log.e(LOG_TAG, "@@@ Error while getting master data "+e.getMessage());
+                        Log.e(LOG_TAG, "@@@ Error while getting master data " + e.getMessage());
                     }
                     dbUpgradeCall();
                     startMasterSync();

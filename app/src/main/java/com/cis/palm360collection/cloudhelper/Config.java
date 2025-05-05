@@ -69,6 +69,7 @@ public class Config {
 
 
     public static final String getTransCountByVillageCode = "/TranSync/GetCountByVillage/%s/%s/%s";//{Date}/{UserId}{Village}
+   // public static final String getTransCountByVillageCode = "/TranSync/GetCountByVillage/%s/%s/%s";//{Date}/{UserId}{Village}
     public static final String getCountByVillage = "/TranSync/GetCountByVillage/%s/%s";//{Date}/{UserId}
     public static final String getTransData = "/SyncTransactions/%s";//api/TranSync/SyncFarmers/{Date}/{UserId}/{Index}
     public static final String getTransDataByVillageCode = "/TranSync/%s/%s/%s/%s/%s";//api/TranSync/SyncFarmers/{Date}/{UserId}/{Village}/{Index}

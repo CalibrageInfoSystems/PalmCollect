@@ -1,7 +1,8 @@
 package com.cis.palm360collection.weighbridge;
 
-import android.support.v4.app.Fragment;
 import android.view.View;
+
+import androidx.fragment.app.Fragment;
 
 import com.cis.palm360collection.R;
 

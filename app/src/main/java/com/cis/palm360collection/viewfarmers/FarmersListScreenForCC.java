@@ -5,11 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Rect;
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -22,6 +17,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cis.palm360collection.R;
 import com.cis.palm360collection.cloudhelper.ApplicationThread;
@@ -36,6 +32,8 @@ import com.cis.palm360collection.datasync.helpers.DataManager;
 import com.cis.palm360collection.dbmodels.BasicFarmerDetails;
 import com.cis.palm360collection.ui.RecyclerItemClickListener;
 import com.cis.palm360collection.uihelper.ProgressBar;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,8 +41,6 @@ import java.util.Locale;
 
 import me.dm7.barcodescanner.core.IViewFinder;
 import me.dm7.barcodescanner.core.ViewFinderView;
-import me.dm7.barcodescanner.zbar.Result;
-import me.dm7.barcodescanner.zbar.ZBarScannerView;
 
 import static com.cis.palm360collection.common.CommonConstants.selectedPlotCode;
 import static com.cis.palm360collection.datasync.helpers.DataManager.COLLECTION_CENTER_DATA;
@@ -53,10 +49,17 @@ import static com.cis.palm360collection.datasync.helpers.DataManager.SELECTED_FA
 import static com.cis.palm360collection.datasync.helpers.DataManager.TOTAL_FARMERS_DATA;
 import static com.cis.palm360collection.ui.SplashScreen.palm3FoilDatabase;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 /**
  * Created by skasam on 9/27/2016.
  */
-public class FarmersListScreenForCC extends AppCompatActivity implements RecyclerItemClickListener, OperateAdditionalPlots.addedPlotCodesListener , ZBarScannerView.ResultHandler {
+public class FarmersListScreenForCC extends AppCompatActivity implements RecyclerItemClickListener, OperateAdditionalPlots.addedPlotCodesListener {
     private static final String LOG_TAG = FarmersListScreenForCC.class.getName();
     private FarmerDetailsRecyclerAdapter farmerDetailsRecyclerAdapter;
     private RecyclerView farmlandLVMembers;
@@ -74,7 +77,6 @@ public class FarmersListScreenForCC extends AppCompatActivity implements Recycle
     private Button addDoneBtn;
     private ImageView qrByFarmer;
     private BasicFarmerDetails mainFarmer;
-    private ZBarScannerView mScannerView;
     private Dialog dialog;
     private LinearLayout layoutScan;
 
@@ -375,61 +377,91 @@ public class FarmersListScreenForCC extends AppCompatActivity implements Recycle
     }
 
     //Handling Search Result
+//    @Override
+//    public void handleResult(Result result) {
+//
+//        mEtSearch.setText(result.getContents());
+//        doSearch(result.getContents());
+//
+//        dialog.dismiss();
+//
+//    }
+
+
     @Override
-    public void handleResult(Result result) {
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        IntentResult intentResult = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        // if the intentResult is null then
+        // toast a message as "cancelled"
+        if (intentResult != null) {
+            if (intentResult.getContents() == null) {
+                Toast.makeText(getBaseContext(), "Cancelled", Toast.LENGTH_SHORT).show();
+            } else {
+                // if the intentResult is not null we'll set
+                // the content and format of scan message
+                mEtSearch.setText(intentResult.getContents());
+                doSearch(intentResult.getContents());
 
-        mEtSearch.setText(result.getContents());
-        doSearch(result.getContents());
-
-        dialog.dismiss();
-
+            }
+        } else {
+            super.onActivityResult(requestCode, resultCode, data);
+        }
     }
+
 
     //Search Farmer by Scanning QR Code
     private void scanByQrCode()
     {
-        dialog = new Dialog(this);
-        mScannerView = new ZBarScannerView(this);
-        Rect displayRectangle = new Rect();
-        Window window = this.getWindow();
-        window.getDecorView().getWindowVisibleDisplayFrame(displayRectangle);
-       // mScannerView.setMinimumWidth((int) (displayRectangle.width() * 0.4f));
-      //  mScannerView.setMinimumHeight((int) (displayRectangle.width() * 0.5f));
-       // mScannerView.getFramingRectInPreview(400,400);
 
-        mScannerView = new ZBarScannerView(this) {
-            @Override
-            protected IViewFinder createViewFinderView(Context context) {
-                return new CustomViewFinderView(context);
-            }
-        };
 
-        View v = LayoutInflater.from(this).inflate(R.layout.scan_view,null);
-        v.setMinimumHeight((int) (displayRectangle.width() * 0.5f));
-        dialog.setContentView(v);
-        LinearLayout layoutt = dialog.findViewById(R.id.layoutView);
-        layoutt.addView(mScannerView);
-        dialog.setTitle("Title...");
+        IntentIntegrator intentIntegrator = new IntentIntegrator(this);
+        intentIntegrator.setPrompt("Scan a barcode or QR Code");
+        intentIntegrator.setOrientationLocked(true);
+        intentIntegrator.initiateScan();
 
-        mScannerView.setResultHandler(this); // Register ourselves as a handler for scan results.
-        mScannerView.startCamera();
-
-        // set the custom dialog components - text, image and button
-       //// TextView text = (TextView) dialog.findViewById(R.id.text);
-      //  text.setText("Android custom dialog example!");
-       // ImageView image = (ImageView) dialog.findViewById(R.id.image);
-       /// image.setImageResource(R.drawable.ic_launcher);
-
-      /*  Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
-        // if button is clicked, close the custom dialog
-        dialogButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dialog.dismiss();
-            }
-        });*/
-
-        dialog.show();
+//        dialog = new Dialog(this);
+//        mScannerView = new ZBarScannerView(this);
+//        Rect displayRectangle = new Rect();
+//        Window window = this.getWindow();
+//        window.getDecorView().getWindowVisibleDisplayFrame(displayRectangle);
+//       // mScannerView.setMinimumWidth((int) (displayRectangle.width() * 0.4f));
+//      //  mScannerView.setMinimumHeight((int) (displayRectangle.width() * 0.5f));
+//       // mScannerView.getFramingRectInPreview(400,400);
+//
+//        mScannerView = new ZBarScannerView(this) {
+//            @Override
+//            protected IViewFinder createViewFinderView(Context context) {
+//                return new CustomViewFinderView(context);
+//            }
+//        };
+//
+//        View v = LayoutInflater.from(this).inflate(R.layout.scan_view,null);
+//        v.setMinimumHeight((int) (displayRectangle.width() * 0.5f));
+//        dialog.setContentView(v);
+//        LinearLayout layoutt = dialog.findViewById(R.id.layoutView);
+//        layoutt.addView(mScannerView);
+//        dialog.setTitle("Title...");
+//
+//        mScannerView.setResultHandler(this); // Register ourselves as a handler for scan results.
+//        mScannerView.startCamera();
+//
+//        // set the custom dialog components - text, image and button
+//       //// TextView text = (TextView) dialog.findViewById(R.id.text);
+//      //  text.setText("Android custom dialog example!");
+//       // ImageView image = (ImageView) dialog.findViewById(R.id.image);
+//       /// image.setImageResource(R.drawable.ic_launcher);
+//
+//      /*  Button dialogButton = (Button) dialog.findViewById(R.id.dialogButtonOK);
+//        // if button is clicked, close the custom dialog
+//        dialogButton.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                dialog.dismiss();
+//            }
+//        });*/
+//
+//        dialog.show();
     }
 
     private static class CustomViewFinderView extends ViewFinderView {

@@ -5,11 +5,8 @@ import android.app.Application;
 import android.os.Build;
 import android.os.StrictMode;
 
-import com.crashlytics.android.Crashlytics;
 import com.cis.palm360collection.cloudhelper.ApplicationThread;
 import com.cis.palm360collection.cloudhelper.Config;
-
-import io.fabric.sdk.android.Fabric;
 
 public class Oil3FPalmMainApplication extends Application {
 
@@ -26,7 +23,7 @@ public class Oil3FPalmMainApplication extends Application {
         }
         super.onCreate();
         thisInstance=this;
-        Fabric.with(this, new Crashlytics());
+       // Fabric.with(this, new Crashlytics());
         ApplicationThread.start();
         Config.initialize();
 

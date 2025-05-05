@@ -3,9 +3,6 @@ package com.cis.palm360collection.datasync;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Pair;
 import android.view.View;
@@ -42,9 +39,9 @@ import java.util.List;
 import static com.cis.palm360collection.datasync.helpers.DataSyncHelper.PREVIOUS_SYNC_DATE;
 import static com.cis.palm360collection.ui.SplashScreen.palm3FoilDatabase;
 
-/**
- * Created by skasam on 9/30/2016.
- */
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.FragmentManager;
 
 //Sync Activities can be done from this screen
 public class RefreshSyncActivity extends AppCompatActivity implements View.OnClickListener {

@@ -1,11 +1,7 @@
 package com.cis.palm360collection.StockTransfer;
 
 import android.content.Intent;
-import android.support.annotation.Nullable;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,8 +12,6 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.google.zxing.integration.android.IntentIntegrator;
-import com.google.zxing.integration.android.IntentResult;
 import com.cis.palm360collection.R;
 import com.cis.palm360collection.cloudhelper.ApplicationThread;
 import com.cis.palm360collection.cloudhelper.Log;
@@ -31,6 +25,9 @@ import com.cis.palm360collection.utils.UiUtils;
 
 import org.json.JSONObject;
 import com.cis.palm360collection.R;
+import com.google.zxing.integration.android.IntentIntegrator;
+import com.google.zxing.integration.android.IntentResult;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -38,6 +35,11 @@ import java.util.List;
 import java.util.Locale;
 
 import static com.cis.palm360collection.database.DatabaseKeys.TABLE_STOCK_RECEIVE;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 //Receive Stock Transfer Receive
 
@@ -258,11 +260,12 @@ public class ReciveStockTransfer extends AppCompatActivity implements View.OnCli
     //Handling the result after scan
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        IntentResult result = IntentIntegrator.parseActivityResult(requestCode,resultCode,data);
-        if (result!=null){
-            if (result.getContents() == null){
+        super.onActivityResult(requestCode, resultCode, data);
+        IntentResult result = IntentIntegrator.parseActivityResult(requestCode, resultCode, data);
+        if (result != null) {
+            if (result.getContents() == null) {
                 Toast.makeText(this, "Result Not Found", Toast.LENGTH_LONG).show();
-            }else {
+            } else {
                 //if qr contains data
                 try {
                     stockTransferNumber = result.getContents();

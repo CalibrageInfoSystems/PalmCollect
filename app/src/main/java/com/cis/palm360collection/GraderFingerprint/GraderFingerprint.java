@@ -11,10 +11,7 @@ import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.MenuItem;
@@ -22,6 +19,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.cis.palm360collection.R;
 import com.cis.palm360collection.collectioncenter.CollectionCenterHomeScreen;
@@ -133,7 +134,7 @@ public class GraderFingerprint extends AppCompatActivity implements Runnable, SG
         sgfplib = new JSGFPLib(this, (UsbManager)getSystemService(Context.USB_SERVICE));
         usbPermissionRequested = false;
         bSecuGenDeviceOpened = false;
-        mPermissionIntent = PendingIntent.getBroadcast(this, 0, new Intent(ACTION_USB_PERMISSION), 0);
+        mPermissionIntent = PendingIntent.getBroadcast(this, 0, new Intent(ACTION_USB_PERMISSION), PendingIntent.FLAG_IMMUTABLE);
         mNumFakeThresholds = new int[1];
         mFakeEngineReady =new boolean[1];
         mDefaultFakeThreshold = new int[1];

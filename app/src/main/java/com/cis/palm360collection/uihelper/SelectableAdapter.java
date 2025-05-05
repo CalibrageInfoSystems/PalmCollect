@@ -1,7 +1,8 @@
 package com.cis.palm360collection.uihelper;
 
-import android.support.v7.widget.RecyclerView;
 import android.util.SparseBooleanArray;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.cis.palm360collection.cloudhelper.Log;
 

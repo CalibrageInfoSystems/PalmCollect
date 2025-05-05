@@ -1,12 +1,13 @@
 package com.cis.palm360collection.viewfarmers;
 
 import android.content.Context;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.cis.palm360collection.R;
 import com.cis.palm360collection.cloudhelper.Log;
@@ -70,7 +71,7 @@ public class FarmerDetailsRecyclerAdapter extends RecyclerView.Adapter<FarmerDet
 
         final String imageUrl = CommonUtils.getImageUrl(item);
 //        final String imageUrl = "https://api.learn2crack.com/android/images/donut.png";
-        Picasso.with(context)
+        Picasso.get()
                 .load(imageUrl)
                 .networkPolicy(NetworkPolicy.OFFLINE)
                 .into(holder.userImage, new Callback() {
@@ -80,9 +81,9 @@ public class FarmerDetailsRecyclerAdapter extends RecyclerView.Adapter<FarmerDet
                     }
 
                     @Override
-                    public void onError() {
+                    public void onError(Exception e) {
                         //Try again online if cache failed
-                        Picasso.with(context)
+                        Picasso.get()
                                 .load(imageUrl)
                                 .error(R.mipmap.famer_profile)
                                 .into(holder.userImage, new Callback() {
@@ -92,9 +93,10 @@ public class FarmerDetailsRecyclerAdapter extends RecyclerView.Adapter<FarmerDet
                                     }
 
                                     @Override
-                                    public void onError() {
+                                    public void onError(Exception e) {
                                         Log.v("Picasso","Could not fetch image");
                                     }
+
                                 });
                     }
                 });

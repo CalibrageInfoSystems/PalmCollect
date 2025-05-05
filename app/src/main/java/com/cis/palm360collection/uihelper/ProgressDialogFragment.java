@@ -6,8 +6,6 @@ import android.graphics.Rect;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.content.ContextCompat;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,6 +14,9 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.*;
 import android.widget.ProgressBar;
+
+import androidx.core.content.ContextCompat;
+import androidx.fragment.app.DialogFragment;
 
 import com.cis.palm360collection.R;
 import com.cis.palm360collection.cloudhelper.ApplicationThread;

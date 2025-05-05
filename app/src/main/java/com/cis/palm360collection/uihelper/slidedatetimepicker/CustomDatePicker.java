@@ -2,6 +2,7 @@ package com.cis.palm360collection.uihelper.slidedatetimepicker;
 
 import java.lang.reflect.Field;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -24,6 +25,7 @@ public class CustomDatePicker extends DatePicker
 {
     private static final String TAG = "CustomDatePicker";
 
+    @SuppressLint("SoonBlockedPrivateApi")
     public CustomDatePicker(Context context, AttributeSet attrs)
     {
         super(context, attrs);

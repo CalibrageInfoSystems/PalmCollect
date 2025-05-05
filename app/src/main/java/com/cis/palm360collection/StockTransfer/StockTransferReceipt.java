@@ -3,8 +3,6 @@ package com.cis.palm360collection.StockTransfer;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,6 +55,9 @@ import static com.cis.palm360collection.datasync.helpers.DataManager.COLLECTION_
 import static com.cis.palm360collection.datasync.helpers.DataManager.COLLECTION_CENTER_ID;
 import static com.cis.palm360collection.datasync.helpers.DataManager.USER_DETAILS;
 import static com.cis.palm360collection.ui.SplashScreen.palm3FoilDatabase;
+
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 /**
  * Created by Bali Reddy on 25/02/19.
@@ -280,7 +281,7 @@ public class StockTransferReceipt extends BaseFragment implements BluetoothDevic
                 if (success){
                     Log.v(LOG_TAG, "@@@ data saved successfully for " + ccDataAccessHandler.TABLE_COLLECTION_PLOT_XREF);
                     UiUtils.showCustomToastMessage("Data saved", getActivity(), 0);
-                    if (CommonUtils.isNetworkAvailable(Objects.requireNonNull(getActivity()))) {
+                    if (CommonUtils.isNetworkAvailable(requireActivity())) {
                         CommonUtils.isNotSyncScreen = false;
                         DataSyncHelper.performCollectionCenterTransactionsSync(getActivity(), new ApplicationThread.OnComplete() {
                             @Override

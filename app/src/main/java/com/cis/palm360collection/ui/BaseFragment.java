@@ -1,13 +1,9 @@
 package com.cis.palm360collection.ui;
 
+import android.annotation.SuppressLint;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
-import android.support.v4.app.Fragment;
-import android.support.v7.app.ActionBar;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.transition.Slide;
 import android.transition.Visibility;
 import android.view.Gravity;
@@ -16,11 +12,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.ActionBar;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
+
 import com.cis.palm360collection.R;
 
 
 //Common Base Fragment
-public abstract class BaseFragment extends Fragment  {
+public abstract class BaseFragment extends Fragment {
 
     private ActionBar actionBar;
     private View rootView;
@@ -50,6 +52,7 @@ public abstract class BaseFragment extends Fragment  {
 
     public abstract void Initialize();
 
+    @SuppressLint("RestrictedApi")
     public void setTile(final String title) {
         actionBar.setTitle(title);
         actionBar.invalidateOptionsMenu();

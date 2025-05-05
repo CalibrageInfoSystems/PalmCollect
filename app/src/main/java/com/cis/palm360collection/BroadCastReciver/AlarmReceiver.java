@@ -7,8 +7,9 @@ import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import  android.support.v4.app.NotificationCompat;
 import android.widget.Toast;
+
+import androidx.core.app.NotificationCompat;
 
 import com.cis.palm360collection.cloudhelper.ApplicationThread;
 import com.cis.palm360collection.cloudhelper.CloudDataHandler;

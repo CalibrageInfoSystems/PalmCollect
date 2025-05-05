@@ -4,13 +4,14 @@ import java.util.Date;
 
 import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.DatePicker;
 import android.widget.DatePicker.OnDateChangedListener;
+
+import androidx.fragment.app.Fragment;
 
 import com.cis.palm360collection.R;
 
@@ -64,19 +65,6 @@ public class DateFragment extends Fragment
         }
     }
 
-    /**
-     * Return an instance of DateFragment with its bundle filled with the
-     * constructor arguments. The values in the bundle are retrieved in
-     * {@link #onCreateView()} below to properly initialize the DatePicker.
-     *
-     * @param theme
-     * @param year
-     * @param month
-     * @param day
-     * @param minDate
-     * @param maxDate
-     * @return an instance of DateFragment
-     */
     public static final DateFragment newInstance(int theme, int year, int month,
             int day, Date minDate, Date maxDate)
     {

@@ -4,9 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.location.LocationManager;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -31,6 +28,7 @@ import com.cis.palm360collection.dbmodels.UserSync;
 import com.cis.palm360collection.uihelper.ProgressBar;
 import com.cis.palm360collection.utils.SharedPrefManager;
 import com.cis.palm360collection.utils.UiUtils;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -42,6 +40,8 @@ import es.dmoral.toasty.Toasty;
 import static com.cis.palm360collection.datasync.helpers.DataManager.USER_DETAILS;
 import static com.cis.palm360collection.datasync.helpers.DataManager.USER_VILLAGES;
 import static com.cis.palm360collection.ui.SplashScreen.palm3FoilDatabase;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 
 //Login Screen

@@ -1,10 +1,10 @@
 package com.cis.palm360collection.uihelper.slidedatetimepicker;
 
-import java.util.Date;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
+import java.util.Date;
 
 /**
  * <p>This class contains methods for the library client to create
@@ -156,10 +156,6 @@ public class SlideDateTimePicker
         mIndicatorColor = indicatorColor;
     }
 
-    /**
-     * Shows the dialog to the user. Make sure to call
-     * {@link #setListener()} before calling this.
-     */
     public void show()
     {
         if (mListener == null)

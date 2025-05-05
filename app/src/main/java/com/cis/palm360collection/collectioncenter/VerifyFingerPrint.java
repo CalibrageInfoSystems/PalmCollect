@@ -16,9 +16,8 @@ import android.graphics.Color;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
 import android.os.Build;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
+
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -28,6 +27,9 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.alcorlink.alcamsdk.SecuGenDevice;
 import com.cis.palm360collection.R;
@@ -623,7 +625,7 @@ public class VerifyFingerPrint extends AppCompatActivity implements Runnable, SG
 
         autoOn = new SGAutoOnEventNotifier(sgfplib, this);
         //USB Permissions
-        mPermissionIntent = PendingIntent.getBroadcast(this, 0, new Intent(ACTION_USB_PERMISSION), 0);
+        mPermissionIntent = PendingIntent.getBroadcast(this, 0, new Intent(ACTION_USB_PERMISSION), PendingIntent.FLAG_IMMUTABLE);
         filter = new IntentFilter(ACTION_USB_PERMISSION);
         mAutoOnEnabled = false;
         usbPermissionRequested = false;

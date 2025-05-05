@@ -2,6 +2,7 @@ package com.cis.palm360collection.uihelper.slidedatetimepicker;
 
 import java.lang.reflect.Field;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -25,6 +26,7 @@ public class CustomTimePicker extends TimePicker
 {
     private static final String TAG = "CustomTimePicker";
 
+    @SuppressLint("SoonBlockedPrivateApi")
     public CustomTimePicker(Context context, AttributeSet attrs)
     {
         super(context, attrs);

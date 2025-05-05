@@ -10,10 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.FileProvider;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -66,6 +62,11 @@ import static com.cis.palm360collection.database.DatabaseKeys.TABLE_CONSIGNMENT;
 import static com.cis.palm360collection.datasync.helpers.DataManager.COLLECTION_CENTER_DATA;
 import static com.cis.palm360collection.datasync.helpers.DataManager.MILL_INFORMATION;
 import static com.cis.palm360collection.datasync.helpers.DataManager.USER_DETAILS;
+
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.FileProvider;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 //Fill Consignment Details
 public class SendConsignment extends BaseFragment {

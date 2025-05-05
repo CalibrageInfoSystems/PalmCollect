@@ -1,9 +1,6 @@
 package com.cis.palm360collection.StockTransfer;
 
 import android.app.DatePickerDialog;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,6 +43,10 @@ import java.util.List;
 import java.util.Locale;
 
 import static com.cis.palm360collection.ui.SplashScreen.palm3FoilDatabase;
+
+import androidx.fragment.app.FragmentManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 //Stock Transfer Reports Screen
 public class StockTransferReport extends OilPalmBaseActivity implements onPrintOptionSelected,  onPrinterType, UsbDevicesListFragment.onUsbDeviceSelected, BluetoothDevicesFragment.onDeviceSelected {

@@ -2,10 +2,7 @@ package com.cis.palm360collection.collectioncenter;
 
 
 import android.graphics.Rect;
-import android.support.v4.app.DialogFragment;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +11,10 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import androidx.fragment.app.DialogFragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.cis.palm360collection.R;
 import com.cis.palm360collection.areaextension.FarmerPlotDetailsAdapter;

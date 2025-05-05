@@ -8,12 +8,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Point;
 
-
-import android.support.v4.app.Fragment;
-
-
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.text.TextUtils;
 
 import android.view.Display;
@@ -58,9 +52,6 @@ import com.cis.palm360collection.weighbridge.TokenTable;
 import com.cis.palm360collection.weighbridge.tareWeighCaliculation;
 
 
-import org.apache.commons.lang3.StringUtils;
-
-
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -75,6 +66,12 @@ import static android.content.Context.MODE_PRIVATE;
 import static com.cis.palm360collection.datasync.helpers.DataManager.COLLECTION_CENTER_DATA;
 import static com.cis.palm360collection.datasync.helpers.DataManager.PRIVATE_WEIGHBRIDGE_INFO;
 import static com.cis.palm360collection.datasync.helpers.DataManager.USER_DETAILS;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import org.apache.commons.lang3.StringUtils;
 
 import SecuGen.FDxSDKPro.JSGFPLib;
 import SecuGen.FDxSDKPro.SGAutoOnEventNotifier;

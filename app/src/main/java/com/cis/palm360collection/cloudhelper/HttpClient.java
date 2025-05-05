@@ -161,16 +161,16 @@ public class HttpClient {
 
                 if (statusCode == HttpStatus.SC_OK) {
                     final String postResponse = EntityUtils.toString(response.getEntity(), "UTF-8");
-                    Log.pushLogToCrashlytics(url+"\n"+jsonObject.toString());
-                    Log.pushLogToCrashlytics(postResponse);
-                    Log.pushExceptionToCrashlytics(new OilPalmException(postResponse));
+                   // Log.pushLogToCrashlytics(url+"\n"+jsonObject.toString());
+                    //Log.pushLogToCrashlytics(postResponse);
+                    //Log.pushExceptionToCrashlytics(new OilPalmException(postResponse));
                     Log.d(HttpClient.class.getName(), "\n\npost response: \n" + postResponse);
                     if (null != onComplete) onComplete.execute(true, postResponse, null);
                 } else {
                     final String postResponse = EntityUtils.toString(response.getEntity(), "UTF-8");
-                    Log.pushLogToCrashlytics(url+"\n"+jsonObject.toString());
-                    Log.pushLogToCrashlytics(postResponse);
-                    Log.pushExceptionToCrashlytics(new OilPalmException(jsonObject.toString()+"\n"+postResponse));
+                   // Log.pushLogToCrashlytics(url+"\n"+jsonObject.toString());
+                   // Log.pushLogToCrashlytics(postResponse);
+                   // Log.pushExceptionToCrashlytics(new OilPalmException(jsonObject.toString()+"\n"+postResponse));
                     Log.d(HttpClient.class.getName(), "\n\npost response failed: \n" + postResponse);
                     if (null != onComplete) onComplete.execute(false, postResponse, postResponse);
                 }

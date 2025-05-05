@@ -17,11 +17,6 @@ import android.os.Environment;
 import android.os.Handler;
 import android.os.Parcelable;
 import android.provider.Settings;
-import android.support.annotation.NonNull;
-import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -75,6 +70,12 @@ import static com.cis.palm360collection.common.CommonConstants.collectionType;
 import static com.cis.palm360collection.datasync.helpers.DataManager.COLLECTION_CENTER_DATA;
 import static com.cis.palm360collection.datasync.helpers.DataManager.EXTRA_PLOTS;
 import static com.cis.palm360collection.ui.SplashScreen.palm3FoilDatabase;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.DialogFragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 //Home Screen
 public class CollectionCenterHomeScreen extends AppCompatActivity {
@@ -265,7 +266,7 @@ public class CollectionCenterHomeScreen extends AppCompatActivity {
         intentt.setAction("BackgroundProcess");
         Log.v(LOG_TAG, "BackgroundProcess");
         //Set the repeated Task
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(CollectionCenterHomeScreen.this, 0, intentt, 0);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(CollectionCenterHomeScreen.this, 0, intentt, PendingIntent.FLAG_IMMUTABLE);
         AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
         //86400000 -- 24 hr
         //600000 -- 1 min

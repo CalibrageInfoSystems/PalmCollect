@@ -3,7 +3,6 @@ package com.cis.palm360collection.uihelper.slidedatetimepicker;
 import android.content.Context;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.text.format.DateFormat;
 import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
@@ -13,6 +12,8 @@ import android.widget.DatePicker;
 import android.widget.NumberPicker;
 import android.widget.NumberPicker.OnValueChangeListener;
 import android.widget.TimePicker;
+
+import androidx.fragment.app.Fragment;
 
 import com.cis.palm360collection.R;
 
@@ -64,19 +65,6 @@ public class TimeFragment extends Fragment
                 "TimeFragment.TimeChangedListener interface");
         }
     }
-
-    /**
-     * Return an instance of TimeFragment with its bundle filled with the
-     * constructor arguments. The values in the bundle are retrieved in
-     * {@link #onCreateView()} below to properly initialize the TimePicker.
-     *
-     * @param theme
-     * @param hour
-     * @param minute
-     * @param isClientSpecified24HourTime
-     * @param is24HourTime
-     * @return
-     */
     public static final TimeFragment newInstance(int theme, int hour, int minute,
         boolean isClientSpecified24HourTime, boolean is24HourTime)
     {

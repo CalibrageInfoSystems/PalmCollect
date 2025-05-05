@@ -3,7 +3,8 @@ package com.cis.palm360collection.utils;
 import android.app.job.JobParameters;
 import android.app.job.JobService;
 import android.os.Build;
-import android.support.annotation.RequiresApi;
+
+import androidx.annotation.RequiresApi;
 
 /**
  * Created by  BAliReddy on 26/3/2018.

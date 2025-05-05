@@ -1,9 +1,8 @@
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.cis.palm360collection.areaextension.PlotDetailsFragment"
     android:background="@color/white">
 
     <include
@@ -303,11 +302,11 @@
                         android:layout_marginTop="2dp"
                         android:background="@color/colorPrimary" />
 
-                    <android.support.v7.widget.RecyclerView
+                    <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/currentCropRecyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"></android.support.v7.widget.RecyclerView>
+                        android:layout_marginTop="2dp"></androidx.recyclerview.widget.RecyclerView>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -435,11 +434,11 @@
                         android:layout_marginTop="2dp"
                         android:background="@color/colorPrimary" />
 
-                    <android.support.v7.widget.RecyclerView
+                    <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/neighbourPlotRecyclerView"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="2dp"></android.support.v7.widget.RecyclerView>
+                        android:layout_marginTop="2dp"></androidx.recyclerview.widget.RecyclerView>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -489,4 +488,4 @@
             android:visibility="gone" />
     </RelativeLayout>
 
-</android.support.design.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -12,12 +12,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.content.FileProvider;
-import android.support.v7.widget.Toolbar;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextUtils;
@@ -56,8 +50,6 @@ import com.cis.palm360collection.dbmodels.GraderDetails;
 import com.cis.palm360collection.utils.ImageUtility;
 import com.cis.palm360collection.utils.UiUtils;
 
-import org.apache.commons.lang3.StringUtils;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -75,6 +67,15 @@ import java.util.concurrent.TimeUnit;
 
 import static android.app.Activity.RESULT_OK;
 import static com.cis.palm360collection.datasync.helpers.DataManager.COLLECTION_CENTER_DATA;
+
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.FileProvider;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import org.apache.commons.lang3.StringUtils;
 
 import SecuGen.FDxSDKPro.JSGFPLib;
 import SecuGen.FDxSDKPro.SGAutoOnEventNotifier;

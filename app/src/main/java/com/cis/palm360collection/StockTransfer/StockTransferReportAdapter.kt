@@ -2,12 +2,12 @@ package com.cis.palm360collection.StockTransfer
 
 import android.annotation.SuppressLint
 import android.content.Context
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.recyclerview.widget.RecyclerView
 import com.cis.palm360collection.R
 import com.cis.palm360collection.cloudhelper.Log
 import com.cis.palm360collection.collectioncenter.onPrintOptionSelected

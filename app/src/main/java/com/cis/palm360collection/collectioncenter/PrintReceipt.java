@@ -5,9 +5,6 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -62,6 +59,10 @@ import static com.cis.palm360collection.datasync.helpers.DataManager.PRIVATE_WEI
 import static com.cis.palm360collection.datasync.helpers.DataManager.SELECTED_FARMER_DATA;
 import static com.cis.palm360collection.datasync.helpers.DataManager.SELECTED_FARMER_PLOT_DATA;
 import static com.cis.palm360collection.ui.SplashScreen.palm3FoilDatabase;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentManager;
 
 //To Print the Collections
 public class PrintReceipt extends BaseFragment implements BluetoothDevicesFragment.onDeviceSelected, onPrinterType, UsbDevicesListFragment.onUsbDeviceSelected {
@@ -733,7 +734,7 @@ public class PrintReceipt extends BaseFragment implements BluetoothDevicesFragme
                                 }
                                 Log.v(LOG_TAG, "@@@ data saved successfully for " + ccDataAccessHandler.TABLE_COLLECTION_PLOT_XREF);
                                 UiUtils.showCustomToastMessage("Data saved", getActivity(), 0);
-                                if (CommonUtils.isNetworkAvailable(Objects.requireNonNull(getActivity()))) {
+                                if (CommonUtils.isNetworkAvailable(requireActivity())) {
                                     DataSyncHelper.performCollectionCenterTransactionsSync(getActivity(), new ApplicationThread.OnComplete() {
                                         @Override
                                         public void execute(boolean success, Object result, String msg) {

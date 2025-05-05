@@ -5,8 +5,6 @@ import android.content.Context;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.ListFragment;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,6 +14,9 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.ListFragment;
 
 import com.cis.palm360collection.R;
 import com.cis.palm360collection.weighbridge.driver.UsbSerialDriver;
@@ -155,7 +156,7 @@ public class DevicesFragment extends ListFragment {
             args.putInt("port", item.port);
             args.putInt("baud", baudRate);
             args.putBoolean("withIoManager", withIoManager);
-            Fragment fragment = new TerminalFragment();
+            Fragment fragment = new Fragment();
             fragment.setArguments(args);
             getFragmentManager().beginTransaction().replace(R.id.fragment, fragment, "terminal").addToBackStack(null).commit();
         }

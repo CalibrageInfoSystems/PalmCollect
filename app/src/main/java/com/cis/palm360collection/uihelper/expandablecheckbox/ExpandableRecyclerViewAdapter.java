@@ -2,9 +2,9 @@ package com.cis.palm360collection.uihelper.expandablecheckbox;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.ViewHolder;
 import android.view.ViewGroup;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.cis.palm360collection.uihelper.expandablecheckbox.listeners.ExpandCollapseListener;
 import com.cis.palm360collection.uihelper.expandablecheckbox.listeners.GroupExpandCollapseListener;
@@ -47,7 +47,7 @@ public abstract class ExpandableRecyclerViewAdapter<GVH extends GroupViewHolder,
    * that holds a {@code android.view.View} of the given view type.
    */
   @Override
-  public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+  public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
     switch (viewType) {
       case ExpandableListPosition.GROUP:
         GVH gvh = onCreateGroupViewHolder(parent, viewType);
@@ -74,7 +74,7 @@ public abstract class ExpandableRecyclerViewAdapter<GVH extends GroupViewHolder,
    * ExpandableList#getVisibleItemCount()} in the list at which to bind
    */
   @Override
-  public void onBindViewHolder(ViewHolder holder, int position) {
+  public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
     ExpandableListPosition listPos = expandableList.getUnflattenedPosition(position);
     ExpandableGroup group = expandableList.getExpandableGroup(listPos);
     switch (listPos.type) {
@@ -220,19 +220,6 @@ public abstract class ExpandableRecyclerViewAdapter<GVH extends GroupViewHolder,
   public void onSaveInstanceState(Bundle savedInstanceState) {
     savedInstanceState.putBooleanArray(EXPAND_STATE_MAP, expandableList.expandedGroupIndexes);
   }
-
-  /**
-   * Fetches the expandable state map from the saved instance state {@link Bundle}
-   * and restores the expanded states of all of the list items.
-   * <p>
-   * Should be called from {@link Activity#onRestoreInstanceState(Bundle)}  in
-   * the {@link Activity} that hosts the RecyclerView that this
-   * {@link ExpandableRecyclerViewAdapter} is attached to.
-   * <p>
-   *
-   * @param savedInstanceState The {@code Bundle} from which the expanded
-   * state map is loaded
-   */
   public void onRestoreInstanceState(Bundle savedInstanceState) {
     if (savedInstanceState == null || !savedInstanceState.containsKey(EXPAND_STATE_MAP)) {
       return;

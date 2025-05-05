@@ -13,8 +13,6 @@ import android.graphics.pdf.PdfDocument;
 import android.media.ExifInterface;
 import android.os.Build;
 import android.os.Environment;
-import android.support.annotation.RequiresApi;
-import android.support.v7.app.AlertDialog;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,6 +34,9 @@ import java.io.OutputStream;
 import java.util.LinkedHashMap;
 
 import static com.cis.palm360collection.utils.ImageUtility.calculateInSampleSize;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 
 public class UiUtils {
 
