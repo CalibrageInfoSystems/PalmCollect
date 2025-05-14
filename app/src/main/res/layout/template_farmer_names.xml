@@ -79,7 +79,7 @@
                         android:id="@+id/imageView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Farmer Code"
+                        android:text="Grower Code"
                         />
                     <TextView
                         android:id="@+id/tvfarmercode"
@@ -99,7 +99,7 @@
                         android:id="@+id/imageView4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Farmer Name"
+                        android:text="Grower Name"
                         />
                     <TextView
                         android:id="@+id/tvfarmername"

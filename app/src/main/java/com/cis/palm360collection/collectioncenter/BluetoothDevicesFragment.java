@@ -87,7 +87,42 @@ public class BluetoothDevicesFragment extends DialogFragment {
 
         noDevicesFoundTxt = (TextView) promptView.findViewById(R.id.rescanTxt);
         reScan = (Button) promptView.findViewById(R.id.reScan);
+        reScan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                    // TODO: Consider calling
+                    //    ActivityCompat#requestPermissions
+                    // here to request the missing permissions, and then overriding
+                    //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                    //                                          int[] grantResults)
+                    // to handle the case where the user grants the permission. See the documentation
+                    // for ActivityCompat#requestPermissions for more details.
+                    return;
+                }
+                bluetoothAdapter.disable();
+                ApplicationThread.uiPost(LOG_TAG, "", new Runnable() {
+                    @Override
+                    public void run() {
+                        connectionCount = 0;
+                        if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED) {
+                            // TODO: Consider calling
+                            //    ActivityCompat#requestPermissions
+                            // here to request the missing permissions, and then overriding
+                            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                            //                                          int[] grantResults)
+                            // to handle the case where the user grants the permission. See the documentation
+                            // for ActivityCompat#requestPermissions for more details.
+                            return;
+                        }
+                        bluetoothAdapter.enable();
+                        startDiscovery();
+                    }
+                }, 2000);
+            }
+        });
 
+/*
         reScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -122,6 +157,7 @@ public class BluetoothDevicesFragment extends DialogFragment {
                 }, 2000);
             }
         });
+*/
 
         getActivity().registerReceiver(btDevicesFound, new IntentFilter(
                 BluetoothDevice.ACTION_FOUND));

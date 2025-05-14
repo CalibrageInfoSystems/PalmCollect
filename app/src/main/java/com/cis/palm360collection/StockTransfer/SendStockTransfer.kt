@@ -470,7 +470,7 @@ class SendStockTransfer : BaseFragment() {
             return false
         }
         if(fromCC!!.text.toString() == toCC!!.selectedItem.toString()){
-            UiUtils.showCustomToastMessage("fromCC and toCC should not be same", activity, 1)
+            UiUtils.showCustomToastMessage("From CC and To CC should not be same", activity, 1)
             return false
 
         }

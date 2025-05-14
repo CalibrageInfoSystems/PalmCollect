@@ -267,6 +267,8 @@
                     style="@style/editTxt_normal"
                     android:layout_width="0dp"
                     android:layout_height="50dp"
+                    android:maxLength="10"
+                    android:textAllCaps="true"
                     android:inputType="textCapCharacters"
                     android:layout_weight="1" />
 

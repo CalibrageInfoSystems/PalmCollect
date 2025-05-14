@@ -843,7 +843,7 @@ public class WeighbridgeCC extends BaseFragment {
             weighbridgeCenterDataMap = dataAccessHandler.getGenericData(Queries.getInstance().getweighbridgecenteragainststate(CommonConstants.USER_ID));
             DataManager.getInstance().addData(PRIVATE_WEIGHBRIDGE_INFO, weighbridgeCenterDataMap);
             ArrayAdapter spinnerArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item,
-                    CommonUtils.fromMap(weighbridgeCenterDataMap, "WeighbridgeCenter"));
+                    CommonUtils.fromMap(weighbridgeCenterDataMap, "Weighbridge Center"));
             spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             nameOfPrivateWbSpin.setAdapter(spinnerArrayAdapter);
         }
@@ -854,7 +854,7 @@ public class WeighbridgeCC extends BaseFragment {
             weighbridgeCenterDataMap = dataAccessHandler.getGenericData(Queries.getInstance().getweighbridgecenteragainstdistricts(CommonConstants.USER_ID));
             DataManager.getInstance().addData(PRIVATE_WEIGHBRIDGE_INFO, weighbridgeCenterDataMap);
             ArrayAdapter spinnerArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item,
-                    CommonUtils.fromMap(weighbridgeCenterDataMap, "WeighbridgeCenter"));
+                    CommonUtils.fromMap(weighbridgeCenterDataMap, "Weighbridge Center"));
             spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             nameOfPrivateWbSpin.setAdapter(spinnerArrayAdapter);
         }
@@ -865,7 +865,7 @@ public class WeighbridgeCC extends BaseFragment {
             weighbridgeCenterDataMap = dataAccessHandler.getGenericData(Queries.getInstance().getweighbridgecenteragainststate(CommonConstants.USER_ID));
             DataManager.getInstance().addData(PRIVATE_WEIGHBRIDGE_INFO, weighbridgeCenterDataMap);
             ArrayAdapter spinnerArrayAdapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_spinner_item,
-                    CommonUtils.fromMap(weighbridgeCenterDataMap, "WeighbridgeCenter"));
+                    CommonUtils.fromMap(weighbridgeCenterDataMap, "Weighbridge Center"));
             spinnerArrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
             nameOfPrivateWbSpin.setAdapter(spinnerArrayAdapter);
         }

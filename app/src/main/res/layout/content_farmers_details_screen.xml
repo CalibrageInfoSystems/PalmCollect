@@ -28,7 +28,7 @@
         android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
         android:layout_toLeftOf="@+id/nextBtn"
-        android:text="Add more farmers" />
+        android:text="Add more Growers" />
 
     <ScrollView
         android:layout_width="match_parent"
@@ -54,7 +54,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="left"
                     android:layout_marginTop="2dp"
-                    android:text="Farmer Name"
+                    android:text="Grower Name"
                     android:textSize="20dp" />
 
 

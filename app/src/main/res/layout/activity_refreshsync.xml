@@ -67,7 +67,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1.0"
-                    android:text="Collection Plot"
+                    android:text="Collection Field"
                     android:textColor="#000000"
                     android:textSize="18sp" />
 

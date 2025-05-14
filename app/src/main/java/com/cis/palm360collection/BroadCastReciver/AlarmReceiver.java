@@ -1,5 +1,6 @@
 package com.cis.palm360collection.BroadCastReciver;
 
+
 import static com.cis.palm360collection.ui.SplashScreen.palm3FoilDatabase;
 
 import android.app.Notification;

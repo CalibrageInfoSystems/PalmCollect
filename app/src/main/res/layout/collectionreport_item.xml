@@ -104,7 +104,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="0.6"
                         android:layout_height="wrap_content"
-                        android:text="Farmer Code"
+                        android:text="Grower Code"
                         android:textColor="@color/text_dark_gray" />
 
 
@@ -133,7 +133,7 @@
                         android:layout_width="0dp"
                         android:layout_weight="0.6"
                         android:layout_height="wrap_content"
-                        android:text="Farmer Name"
+                        android:text="Grower Name"
                         android:textColor="@color/text_dark_gray" />
 
 

@@ -43,7 +43,7 @@
 
     <style name="spinner_bg">
         <item name="android:background">@drawable/spinner_bg</item>
-        <item name="android:padding">10dp</item>
+        <item name="android:padding">5dp</item>
     </style>
 
     <style name="spinnerStyle" parent="android:style/Widget.ListView.DropDown">
@@ -137,7 +137,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:ellipsize">end</item>
         <item name="android:textColor">@color/header_txt</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">16sp</item>
         <item name="android:textStyle">normal</item>
         <item name="android:fontFamily">Roboto_Regular</item>
     </style>
@@ -198,7 +198,7 @@
         <item name="android:singleLine">true</item>
         <item name="android:background">@drawable/app_edittext</item>
         <item name="android:padding">5dp</item>
-        <item name="android:layout_height">60dp</item>
+
     </style>
 
 

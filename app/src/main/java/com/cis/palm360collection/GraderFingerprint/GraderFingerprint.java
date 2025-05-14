@@ -11,6 +11,7 @@ import android.content.IntentFilter;
 import android.graphics.Bitmap;
 import android.hardware.usb.UsbDevice;
 import android.hardware.usb.UsbManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -23,6 +24,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import com.cis.palm360collection.R;
 import com.cis.palm360collection.collectioncenter.CollectionCenterHomeScreen;
@@ -51,6 +53,7 @@ import SecuGen.FDxSDKPro.SGFDxTemplateFormat;
 import SecuGen.FDxSDKPro.SGFingerInfo;
 import SecuGen.FDxSDKPro.SGFingerPresentEvent;
 import SecuGen.FDxSDKPro.SGImpressionType;
+import kotlin.Suppress;
 
 public class GraderFingerprint extends AppCompatActivity implements Runnable, SGFingerPresentEvent {
 
@@ -268,7 +271,9 @@ public class GraderFingerprint extends AppCompatActivity implements Runnable, SG
     public void onResume(){
         Log.d(TAG, "Enter onResume()");
         super.onResume();
-        registerReceiver(mUsbReceiver, filter);
+        ContextCompat.registerReceiver(this, mUsbReceiver, filter, ContextCompat.RECEIVER_EXPORTED);
+        //registerReceiver(mUsbReceiver, filter);
+
         long error = sgfplib.Init( SGFDxDeviceName.SG_DEV_AUTO);
         if (error != SGFDxErrorCode.SGFDX_ERROR_NONE){
             AlertDialog.Builder dlgAlert = new AlertDialog.Builder(this);

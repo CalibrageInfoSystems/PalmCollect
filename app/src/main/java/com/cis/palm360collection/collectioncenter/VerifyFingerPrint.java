@@ -30,6 +30,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 
 import com.alcorlink.alcamsdk.SecuGenDevice;
 import com.cis.palm360collection.R;
@@ -272,8 +273,8 @@ public class VerifyFingerPrint extends AppCompatActivity implements Runnable, SG
                 long error = sgfplib.Init(SGFDxDeviceName.SG_DEV_AUTO);
 
                 if (CommonConstants.IsFingerPrintReq == true && graderDetails.size() > 0) {
-
-                    registerReceiver(mUsbReceiver, filter);
+                    ContextCompat.registerReceiver(VerifyFingerPrint.this, mUsbReceiver, filter, ContextCompat.RECEIVER_EXPORTED);
+                   // registerReceiver(mUsbReceiver, filter);
                     error = sgfplib.Init(SGFDxDeviceName.SG_DEV_AUTO);
                     if (error != SGFDxErrorCode.SGFDX_ERROR_NONE) {
                         AlertDialog.Builder dlgAlert = new AlertDialog.Builder(VerifyFingerPrint.this);

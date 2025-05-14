@@ -89,9 +89,9 @@
                                 android:layout_height="fill_parent"
                                 android:layout_gravity="center"
                                 android:layout_weight="1"
-                                android:text="@string/name_of_the_private_weighbridge_center" />
+                                android:text="Name" />
 
-
+<!--                            android:text="@string/name_of_the_private_weighbridge_center"-->
                             <Spinner
                                 android:id="@+id/millSpin"
                                 style="@style/spinner_bg"
@@ -579,6 +579,7 @@
                         style="@style/editTxt_normal"
                         android:layout_width="0dp"
                         android:layout_height="50dp"
+                        android:digits="@string/input_type_name"
                         android:layout_weight="1"
                         android:maxLength="150" />
                 </LinearLayout>
