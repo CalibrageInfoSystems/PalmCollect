@@ -295,6 +295,37 @@ public String gettitleQuery() {
         return "select UpdatedOn from MasterVersionTrackingSystem";
     }
 
+
+    public String getCollectionUnSyncRecordsCount(){
+        return "SELECT\n" +
+                "  (\n" +
+                "    select count(0) from Collection where ServerUpdatedStatus='false'\n" +
+                "  ) +\n" +
+                "  (\n" +
+                "    select count(0) from CollectionPlotXref where ServerUpdatedStatus='false'\n" +
+                "  ) +\n" +
+                "  (\n" +
+                "    select count(0) from CollectionWithOutPlot where ServerUpdatedStatus='false'\n" +
+                "  ) AS totalUnSyncRecordsCount";
+    }
+
+    public String getStockUnSyncRecordsCount(){
+        return "SELECT\n" +
+                "  (\n" +
+                "    select count(0) from StockTransferReceive where ServerUpdatedStatus='false'\n" +
+                "  ) +\n" +
+                "  (\n" +
+                "    select count(0) from StockTransfer where ServerUpdatedStatus='false'\n" +
+                "  ) AS totalUnSyncRecordsCount";
+    }
+
+    public String getVisitLogUnSyncRecordsCount(){
+        return "select count(0) from VisitLog where ServerUpdatedStatus = 0";
+    }
+    public String getGraderAttendanceUnSyncRecordsCount(){
+        return "select count(0) from GraderAttendance where ServerUpdatedStatus='false'";
+    }
+
     public String getUserDetails(final String imeiNumer) {
         return "select U.EmployeeId, U.EmployeeName, U.Password, T.TabletId from UserDetails U, TabletAllocation T " +
                 "inner join TabletAllocation on U.EmployeeId = T.EmployeeId where U.Employeeid IN (select Employeeid from TabletAllocation where TabletIMEINo = '" + imeiNumer + "'" + ") GROUP BY U.EmployeeId";

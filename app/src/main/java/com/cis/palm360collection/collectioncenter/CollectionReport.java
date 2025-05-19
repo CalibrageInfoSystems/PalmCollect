@@ -34,6 +34,7 @@ import com.cis.palm360collection.uihelper.ProgressBar;
 import com.cis.palm360collection.utils.UiUtils;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
@@ -116,29 +117,38 @@ public class CollectionReport extends OilPalmBaseActivity implements onPrintOpti
         searchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("xxx", "fromDateStr: " + fromDateStr + "toDateStr: " + toDateStr);
                 if (TextUtils.isEmpty(fromDateStr) && TextUtils.isEmpty(toDateStr)) {
                     UiUtils.showCustomToastMessage("Please select from or to dates", CollectionReport.this, 0);
-                } else {
-                    String CollectionNetWeight = dataAccessHandler.getOnlyOneValueFromDb(Queries.getInstance().getCollectionNetSum(fromDateStr, toDateStr));
-                    String CollectionWithOutPlotNetWeight = dataAccessHandler.getOnlyOneValueFromDb(Queries.getInstance().getCollectionWithOutPlotNetSum(fromDateStr, toDateStr));
-                    if (CollectionNetWeight == null){
-                        CollectionNetWeight = "0.0";
-                    }
-                    if (CollectionWithOutPlotNetWeight == null){
-                        CollectionWithOutPlotNetWeight = "0.0";
-                    }
-                    Float totalNetWeight = Float.valueOf(CollectionNetWeight) + Float.valueOf(CollectionWithOutPlotNetWeight);
+                } else if (!TextUtils.isEmpty(fromDateStr) && !TextUtils.isEmpty(toDateStr)) {
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                        LocalDate fromDate = LocalDate.parse(fromDateStr);
+                        LocalDate toDate = LocalDate.parse(toDateStr);
+                        if (fromDate.isAfter(toDate)) {
+                            UiUtils.showCustomToastMessage("From Date should be less than To Date", CollectionReport.this, 0);
+                        } else {
+                            String CollectionNetWeight = dataAccessHandler.getOnlyOneValueFromDb(Queries.getInstance().getCollectionNetSum(fromDateStr, toDateStr));
+                            String CollectionWithOutPlotNetWeight = dataAccessHandler.getOnlyOneValueFromDb(Queries.getInstance().getCollectionWithOutPlotNetSum(fromDateStr, toDateStr));
+                            if (CollectionNetWeight == null){
+                                CollectionNetWeight = "0.0";
+                            }
+                            if (CollectionWithOutPlotNetWeight == null){
+                                CollectionWithOutPlotNetWeight = "0.0";
+                            }
+                            Float totalNetWeight = Float.valueOf(CollectionNetWeight) + Float.valueOf(CollectionWithOutPlotNetWeight);
 //                    String totalNetWeight = dataAccessHandler.getOnlyOneValueFromDb(Queries.getInstance().getCollectionNetSum(fromDateStr, toDateStr));
-                    if (!TextUtils.isEmpty(String.valueOf(totalNetWeight))) {
-                        totalNetWeightSum.setText(" "+totalNetWeight + " Kgs");
+                            if (!TextUtils.isEmpty(String.valueOf(totalNetWeight))) {
+                                totalNetWeightSum.setText(" "+totalNetWeight + " Kgs");
+                            }
+                            searchQuery = Queries.getInstance().getCollectionCenterReports(fromDateStr, toDateStr);
+                            SearchCollectionwithoutPlotQuery = Queries.getInstance().getCollectionCenterReportsWithOutPlot(fromDateStr, toDateStr);
+                            if (null != collectionReportRecyclerAdapter) {
+                                mReportsList.clear();
+                                collectionReportRecyclerAdapter.notifyDataSetChanged();
+                            }
+                            getCollectionCenterReports(searchQuery);
+                        }
                     }
-                    searchQuery = Queries.getInstance().getCollectionCenterReports(fromDateStr, toDateStr);
-                    SearchCollectionwithoutPlotQuery = Queries.getInstance().getCollectionCenterReportsWithOutPlot(fromDateStr, toDateStr);
-                    if (null != collectionReportRecyclerAdapter) {
-                        mReportsList.clear();
-                        collectionReportRecyclerAdapter.notifyDataSetChanged();
-                    }
-                    getCollectionCenterReports(searchQuery);
                 }
             }
         });

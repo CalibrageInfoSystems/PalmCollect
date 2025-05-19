@@ -579,9 +579,10 @@ public class WeighbridgeCC extends BaseFragment {
                     vehicleTypespin.setAdapter(spinnerArrayAdaptervechileType);
 
                 }
-                if (selectedVehicleTypePosition != -1) {
-                    vehicleTypespin.setSelection(selectedVehicleTypePosition);
-                }
+                // Here
+//                if (selectedVehicleTypePosition != -1) {
+//                    vehicleTypespin.setSelection(selectedVehicleTypePosition);
+//                }
                 if (vehicleCategoryspin.getSelectedItemPosition() == 1) {
 
                     vehiclenumber_tv.setText("Vehicle Number");

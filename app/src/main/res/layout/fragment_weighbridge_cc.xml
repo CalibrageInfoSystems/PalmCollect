@@ -1211,8 +1211,9 @@ android:text="Other Details"
                             android:layout_width="0dp"
                             android:layout_height="50dp"
                             android:layout_weight="1"
-                            android:digits="@string/aplhanumeric_type1"
-                            android:maxLength="40" />
+                            android:inputType="text"
+                            android:maxLength="50"
+                            android:digits="@string/input_type_name" />
                     </LinearLayout>
             </LinearLayout>
 

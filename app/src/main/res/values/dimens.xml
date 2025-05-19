@@ -7,4 +7,6 @@
     <dimen name="margin_top_layout">10dp</dimen>
     <dimen name="mailLayMargin">15dp</dimen>
     <dimen name="margin_top_layout_five">5dp</dimen>
+    <dimen name="margin_5">10dp</dimen>
+    <dimen name="textsize24">24dp</dimen>
 </resources>

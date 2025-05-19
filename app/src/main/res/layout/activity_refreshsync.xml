@@ -27,7 +27,501 @@
                 android:text="Refresh Data"
                 android:textSize="22dp" />
 
+            <!--  Collection  -->
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/collectionLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="5"
+                    android:background="@drawable/linearbg"
+                    android:layout_margin="@dimen/margin_5"
+                    android:padding="@dimen/margin_5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textColor="@color/white"
+                        android:textSize="21sp"
+                        android:text="Collection">
+                    </TextView>
+
+                    <ImageView
+                        android:id="@+id/arrowup_collection"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/uparrowwhite">
+
+                    </ImageView>
+
+                    <ImageView
+                        android:id="@+id/arrowdown_collection"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:layout_weight="1"
+                        android:src="@drawable/downarrow_white"></ImageView>
+
+                </LinearLayout>
+                <!--Collection-->
+                <LinearLayout
+                    android:id="@+id/options_collection"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_5"
+                    android:padding="@dimen/margin_5"
+                    android:background="@drawable/dropdown_background"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_weight="0.35"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Collection"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_weight="0.028"
+                            android:layout_width="0dp"
+                            android:textSize="20dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text=" :  "/>
+
+                        <TextView
+                            android:id="@+id/tvcollectiondetails"
+                            android:layout_weight="0.3"
+                            android:textAlignment="center"
+                            android:layout_width="0dp"
+                            android:textSize="20dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text="0"/>
+
+                    </LinearLayout>
+
+                    <!--Collection Field-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_weight="0.35"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Collection Field"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_weight="0.028"
+                            android:layout_width="0dp"
+                            android:textSize="20dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text=" :  "/>
+
+                        <TextView
+                            android:id="@+id/HarvestorVisitHistory"
+                            android:layout_weight="0.3"
+                            android:textAlignment="center"
+                            android:layout_width="0dp"
+                            android:textSize="20dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text="0"/>
+
+                    </LinearLayout>
+
+
+                    <!--Collection Images-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_weight="0.35"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Collection Images"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_weight="0.028"
+                            android:layout_width="0dp"
+                            android:textSize="20dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text=" :  "/>
+
+                        <TextView
+                            android:id="@+id/imagesCount1"
+                            android:layout_weight="0.3"
+                            android:textAlignment="center"
+                            android:layout_width="0dp"
+                            android:textSize="20dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text="0"/>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--  Stock  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/stockLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="5"
+                    android:background="@drawable/linearbg"
+                    android:layout_margin="@dimen/margin_5"
+                    android:padding="@dimen/margin_5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textColor="@color/white"
+                        android:textSize="21sp"
+                        android:text="Stock">
+                    </TextView>
+
+                    <ImageView
+                        android:id="@+id/arrowup_stockvisits"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/uparrowwhite">
+
+                    </ImageView>
+
+                    <ImageView
+                        android:id="@+id/arrowdown_stockvisits"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:layout_weight="1"
+                        android:src="@drawable/downarrow_white"></ImageView>
+
+                </LinearLayout>
+                <!-- Stock Transfer -->
+                <LinearLayout
+                    android:id="@+id/options_stockvisit"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_5"
+                    android:padding="@dimen/margin_5"
+                    android:background="@drawable/dropdown_background"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_weight="0.35"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Stock Transfer"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_weight="0.028"
+                            android:layout_width="0dp"
+                            android:textSize="20dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text=" :  "/>
+
+                        <TextView
+                            android:id="@+id/stCount"
+                            android:layout_weight="0.3"
+                            android:textAlignment="center"
+                            android:layout_width="0dp"
+                            android:textSize="20dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text="0"/>
+
+                    </LinearLayout>
+
+                    <!--Stock Transfer Receive-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_weight="0.35"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Stock Transfer Receive"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_weight="0.028"
+                            android:layout_width="0dp"
+                            android:textSize="20dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text=" :  "/>
+
+                        <TextView
+                            android:id="@+id/stReceiveCount"
+                            android:layout_weight="0.3"
+                            android:textAlignment="center"
+                            android:layout_width="0dp"
+                            android:textSize="20dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text="0"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--  Visit Log  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/visitLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="5"
+                    android:background="@drawable/linearbg"
+                    android:layout_margin="@dimen/margin_5"
+                    android:padding="@dimen/margin_5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textColor="@color/white"
+                        android:textSize="21sp"
+                        android:text="Visit Log">
+                    </TextView>
+
+                    <ImageView
+                        android:id="@+id/arrowup_visitlog"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/uparrowwhite">
+
+                    </ImageView>
+
+                    <ImageView
+                        android:id="@+id/arrowdown_visitlog"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:layout_weight="1"
+                        android:src="@drawable/downarrow_white"></ImageView>
+
+                </LinearLayout>
+                <!--Harvestor Visit-->
+                <LinearLayout
+                    android:id="@+id/options_visit"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_5"
+                    android:padding="@dimen/margin_5"
+                    android:background="@drawable/dropdown_background"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_weight="0.35"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Visit Log"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_weight="0.028"
+                            android:layout_width="0dp"
+                            android:textSize="20dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text=" :  "/>
+
+                        <TextView
+                            android:id="@+id/logCount"
+                            android:layout_weight="0.3"
+                            android:textAlignment="center"
+                            android:layout_width="0dp"
+                            android:textSize="20dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text="0"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--  Grader Attendance  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:orientation="vertical">
+                <LinearLayout
+                    android:id="@+id/gaderAttendanceLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:weightSum="5"
+                    android:background="@drawable/linearbg"
+                    android:layout_margin="@dimen/margin_5"
+                    android:padding="@dimen/margin_5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4"
+                        android:textColor="@color/white"
+                        android:textSize="21sp"
+                        android:text="Grader Attendance">
+                    </TextView>
+
+                    <ImageView
+                        android:id="@+id/arrowup_gaderAttendance"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:layout_weight="1"
+                        android:src="@drawable/uparrowwhite">
+
+                    </ImageView>
+
+                    <ImageView
+                        android:id="@+id/arrowdown_gaderAttendance"
+                        android:layout_width="0dp"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+                        android:visibility="gone"
+                        android:layout_weight="1"
+                        android:src="@drawable/downarrow_white"></ImageView>
+
+                </LinearLayout>
+                <!--Harvestor Visit-->
+                <LinearLayout
+                    android:id="@+id/options_gaderAttendance"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_5"
+                    android:padding="@dimen/margin_5"
+                    android:background="@drawable/dropdown_background"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <TextView
+                            android:layout_weight="0.35"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:text="Grader Attendance"
+                            android:textColor="#000000"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:layout_weight="0.028"
+                            android:layout_width="0dp"
+                            android:textSize="20dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text=" :  "/>
+
+                        <TextView
+                            android:id="@+id/GraderAttendance"
+                            android:layout_weight="0.3"
+                            android:textAlignment="center"
+                            android:layout_width="0dp"
+                            android:textSize="20dp"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:text="0"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:visibility="gone"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -44,7 +538,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/tvcollectiondetails"
+                    android:id="@+id/tvcollectiondetails1"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
@@ -55,10 +549,10 @@
             </LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
-                android:visibility="visible"
                 android:orientation="horizontal">
 
                 <TextView
@@ -83,6 +577,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -138,6 +633,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -164,6 +660,7 @@
                     android:textSize="16sp" />
             </LinearLayout>
             <LinearLayout
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -180,7 +677,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/stCount"
+                    android:id="@+id/stCount1"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
@@ -191,6 +688,7 @@
                     android:textSize="16sp" />
             </LinearLayout>
             <LinearLayout
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -207,7 +705,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/stReceiveCount"
+                    android:id="@+id/stReceiveCount1"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
@@ -219,6 +717,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -235,7 +734,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/logCount"
+                    android:id="@+id/logCount1"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
@@ -247,6 +746,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
@@ -263,7 +763,7 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/GraderAttendance"
+                    android:id="@+id/GraderAttendance1"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="10dp"
@@ -278,6 +778,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -308,6 +810,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:visibility="visible">

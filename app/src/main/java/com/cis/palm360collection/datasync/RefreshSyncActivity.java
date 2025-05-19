@@ -7,6 +7,8 @@ import android.text.TextUtils;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -45,6 +47,17 @@ import androidx.fragment.app.FragmentManager;
 
 //Sync Activities can be done from this screen
 public class RefreshSyncActivity extends AppCompatActivity implements View.OnClickListener {
+
+    private LinearLayout collectionLayout, options_collection,
+            stockLayout, options_stockvisit,
+            visitLayout, options_visit,
+            gaderAttendanceLayout, options_gaderAttendance;
+
+    private ImageView arrowup_collection, arrowdown_collection,
+            arrowup_stockvisits, arrowdown_stockvisits,
+            arrowup_visitlog, arrowdown_visitlog,
+            arrowup_gaderAttendance, arrowdown_gaderAttendance;
+
 
     private static final String LOG_TAG = RefreshSyncActivity.class.getName();
     private static int consignmentCount = 0, collectionsCount = 0, collectionPlotsCountInt = 0,collectionsWithOutPlotCount = 0;
@@ -91,6 +104,7 @@ public class RefreshSyncActivity extends AppCompatActivity implements View.OnCli
         CommonUtils.currentActivity = this;
 
         initUI();
+        setviews();
         consignmentCount = 0;
         collectionsCount = 0;
         collectionPlotsCountInt = 0;
@@ -128,6 +142,25 @@ public class RefreshSyncActivity extends AppCompatActivity implements View.OnCli
         imagesCount = (TextView) findViewById(R.id.imagesCount);
         transSyncBtn = (Button) findViewById(R.id.transSyncBtn);
         btresetdatabase = (Button) findViewById(R.id.btresetdatabase);
+
+        collectionLayout = findViewById(R.id.collectionLayout);
+        options_collection = findViewById(R.id.options_collection);
+        stockLayout = findViewById(R.id.stockLayout);
+        options_stockvisit = findViewById(R.id.options_stockvisit);
+        visitLayout = findViewById(R.id.visitLayout);
+        options_visit = findViewById(R.id.options_visit);
+        gaderAttendanceLayout = findViewById(R.id.gaderAttendanceLayout);
+        options_gaderAttendance = findViewById(R.id.options_gaderAttendance);
+
+        arrowup_collection = findViewById(R.id.arrowup_collection);
+        arrowdown_collection = findViewById(R.id.arrowdown_collection);
+        arrowup_stockvisits = findViewById(R.id.arrowup_stockvisits);
+        arrowdown_stockvisits = findViewById(R.id.arrowdown_stockvisits);
+        arrowup_visitlog = findViewById(R.id.arrowup_visitlog);
+        arrowdown_visitlog = findViewById(R.id.arrowdown_visitlog);
+        arrowup_gaderAttendance = findViewById(R.id.arrowup_gaderAttendance);
+        arrowdown_gaderAttendance = findViewById(R.id.arrowdown_gaderAttendance);
+
 
         TextView titleTxt = (TextView) findViewById(R.id.titleTxt);
 
@@ -179,6 +212,77 @@ public class RefreshSyncActivity extends AppCompatActivity implements View.OnCli
 
         bindData();
 
+    }
+
+    private void setviews() {
+
+        arrowup_collection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                arrowup_collection.setVisibility(View.GONE);
+                arrowdown_collection.setVisibility(View.VISIBLE);
+                options_collection.setVisibility(View.VISIBLE);
+            }
+        });
+        arrowdown_collection.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                arrowdown_collection.setVisibility(View.GONE);
+                arrowup_collection.setVisibility(View.VISIBLE);
+                options_collection.setVisibility(View.GONE);
+            }
+        });
+
+        arrowup_stockvisits.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                arrowup_stockvisits.setVisibility(View.GONE);
+                arrowdown_stockvisits.setVisibility(View.VISIBLE);
+                options_stockvisit.setVisibility(View.VISIBLE);
+            }
+        });
+        arrowdown_stockvisits.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                arrowdown_stockvisits.setVisibility(View.GONE);
+                arrowup_stockvisits.setVisibility(View.VISIBLE);
+                options_stockvisit.setVisibility(View.GONE);
+            }
+        });
+
+        arrowup_visitlog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                arrowup_visitlog.setVisibility(View.GONE);
+                arrowdown_visitlog.setVisibility(View.VISIBLE);
+                options_visit.setVisibility(View.VISIBLE);
+            }
+        });
+        arrowdown_visitlog.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                arrowdown_visitlog.setVisibility(View.GONE);
+                arrowup_visitlog.setVisibility(View.VISIBLE);
+                options_visit.setVisibility(View.GONE);
+            }
+        });
+
+        arrowup_gaderAttendance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                arrowup_gaderAttendance.setVisibility(View.GONE);
+                arrowdown_gaderAttendance.setVisibility(View.VISIBLE);
+                options_gaderAttendance.setVisibility(View.VISIBLE);
+            }
+        });
+        arrowdown_gaderAttendance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                arrowdown_gaderAttendance.setVisibility(View.GONE);
+                arrowup_gaderAttendance.setVisibility(View.VISIBLE);
+                options_gaderAttendance.setVisibility(View.GONE);
+            }
+        });
     }
 
     //Transaction Sync Method
@@ -240,6 +344,28 @@ public class RefreshSyncActivity extends AppCompatActivity implements View.OnCli
     //Binding Data to the Fields
     private void bindData() {
         try {
+            String collectionResult = dataAccessHandler.getCountValue(Queries.getInstance().getCollectionUnSyncRecordsCount());
+            if(!collectionResult.equals("0")){
+                collectionLayout.setBackgroundResource(R.drawable.unsync_layout_bg);
+            }
+
+            String stockResult = dataAccessHandler.getCountValue(Queries.getInstance().getStockUnSyncRecordsCount());
+            if(!stockResult.equals("0")){
+                stockLayout.setBackgroundResource(R.drawable.unsync_layout_bg);
+            }
+
+            String visitLogResult = dataAccessHandler.getCountValue(Queries.getInstance().getVisitLogUnSyncRecordsCount());
+            if(!visitLogResult.equals("0")){
+                visitLayout.setBackgroundResource(R.drawable.unsync_layout_bg);
+            }
+
+            String gaderAttendanceResult = dataAccessHandler.getCountValue(Queries.getInstance().getGraderAttendanceUnSyncRecordsCount());
+            if(!gaderAttendanceResult.equals("0")){
+                gaderAttendanceLayout.setBackgroundResource(R.drawable.unsync_layout_bg);
+            }
+
+
+            Log.d("Collection Result", collectionResult);
             String Collection = dataAccessHandler.getCountValue(Queries.getInstance().getRefreshCountQuery("Collection"));
             String CollectionWithOuPlot = dataAccessHandler.getCountValue(Queries.getInstance().getRefreshCountQuery("CollectionWithOutPlot"));
             int  CollectionCount = Integer.parseInt(Collection ) + Integer.parseInt(CollectionWithOuPlot);
